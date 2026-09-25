@@ -1,204 +1,154 @@
 {
-  "categories": [
+  "modules": [
     {
-      "id": "html",
-      "name": "HTML",
-      "icon": "code",
-      "color": "#E34F26",
-      "lessons": [
-        {
-          "id": "html-1",
-          "title": "HTML Document Structure",
-          "level": "Beginner",
-          "duration": "8 min",
-          "content": "Every HTML document follows a basic skeleton. The <!DOCTYPE html> declaration tells the browser this is HTML5. The <html> element is the root, <head> holds metadata like the title and links to stylesheets, and <body> holds everything the user sees.\n\nSemantic elements like <header>, <main>, <article>, <section>, and <footer> describe the meaning of content, not just its appearance. Using them improves accessibility, SEO, and maintainability.",
-          "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>My Page</title>\n</head>\n<body>\n  <header>\n    <h1>Welcome</h1>\n  </header>\n  <main>\n    <article>\n      <p>Content goes here.</p>\n    </article>\n  </main>\n  <footer>&copy; 2026</footer>\n</body>\n</html>"
-        },
-        {
-          "id": "html-2",
-          "title": "Text, Links & Images",
-          "level": "Beginner",
-          "duration": "10 min",
-          "content": "Headings range from <h1> (most important) to <h6> (least). Paragraphs use <p>. Links use the anchor tag <a> with an href attribute. Images use <img> with src and alt — alt is mandatory for accessibility.",
-          "code": "<h1>Main Heading</h1>\n<h2>Subheading</h2>\n<p>This is a paragraph of text.</p>\n\n<a href=\"https://example.com\" target=\"_blank\" rel=\"noopener\">\n  Open Example\n</a>\n\n<img src=\"photo.jpg\" alt=\"A cat sleeping on a keyboard\" width=\"400\">"
-        },
-        {
-          "id": "html-3",
-          "title": "Lists & Tables",
-          "level": "Beginner",
-          "duration": "9 min",
-          "content": "Ordered lists <ol> use numbers; unordered lists <ul> use bullets. Each item is an <li>. Tables use <table>, with rows <tr>, header cells <th>, and data cells <td>. Use <thead>, <tbody>, and <tfoot> for structure.",
-          "code": "<ul>\n  <li>Apples</li>\n  <li>Bananas</li>\n</ul>\n\n<ol>\n  <li>Wake up</li>\n  <li>Code</li>\n</ol>\n\n<table>\n  <thead>\n    <tr><th>Name</th><th>Score</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Ada</td><td>99</td></tr>\n    <tr><td>Lin</td><td>95</td></tr>\n  </tbody>\n</table>"
-        },
-        {
-          "id": "html-4",
-          "title": "Forms & Inputs",
-          "level": "Intermediate",
-          "duration": "14 min",
-          "content": "Forms collect user input. The <form> element wraps inputs. Each input has a type (text, email, password, number, date, checkbox, radio, etc.) and a name. Labels with for attributes link to inputs by id, improving accessibility. The <select>, <textarea>, and <button> elements round out the form toolkit.",
-          "code": "<form action=\"/submit\" method=\"POST\">\n  <label for=\"email\">Email</label>\n  <input type=\"email\" id=\"email\" name=\"email\" required>\n\n  <label for=\"pw\">Password</label>\n  <input type=\"password\" id=\"pw\" name=\"password\" minlength=\"8\">\n\n  <label for=\"bio\">Bio</label>\n  <textarea id=\"bio\" name=\"bio\" rows=\"4\"></textarea>\n\n  <label for=\"country\">Country</label>\n  <select id=\"country\" name=\"country\">\n    <option value=\"ke\">Kenya</option>\n    <option value=\"ug\">Uganda</option>\n  </select>\n\n  <button type=\"submit\">Sign In</button>\n</form>"
-        }
-      ]
+      "id": "m1",
+      "title": "Web Foundations",
+      "icon": "globe",
+      "color": "#8B5CF6",
+      "description": "The bedrock of every website: HTML structure, CSS presentation, and how browsers turn code into pixels. You will learn how the web works at a protocol level, how to author semantic documents, and how to style them with modern CSS including Flexbox and Grid.",
+      "level": "Beginner",
+      "duration": "3 weeks",
+      "lessons": 8,
+      "topics": [
+        "How the web really works (HTTP, DNS, browsers)",
+        "Semantic HTML & document structure",
+        "Forms, inputs & accessibility",
+        "CSS selectors, specificity & the cascade",
+        "The box model & positioning",
+        "Flexbox for 1D layouts",
+        "CSS Grid for 2D layouts",
+        "Responsive design & mobile-first thinking"
+      ],
+      "skills": ["HTML5", "CSS3", "Responsive Design", "Accessibility"]
     },
     {
-      "id": "css",
-      "name": "CSS",
-      "icon": "palette",
-      "color": "#1572B6",
-      "lessons": [
-        {
-          "id": "css-1",
-          "title": "Selectors & The Box Model",
-          "level": "Beginner",
-          "duration": "12 min",
-          "content": "CSS selectors target HTML elements. Type selectors (p), class selectors (.btn), id selectors (#header), and attribute selectors ([type=\"text\"]) are the basics. The box model says every element is a rectangle: content, padding, border, margin. Use box-sizing: border-box so width includes padding and border.",
-          "code": "* { box-sizing: border-box; }\n\np { line-height: 1.6; }\n\n.btn {\n  background: #8B5CF6;\n  color: white;\n  padding: 10px 20px;\n  border: none;\n  border-radius: 8px;\n}\n\n#header {\n  margin: 0 0 20px 0;\n  padding: 16px;\n  border-bottom: 1px solid #333;\n}"
-        },
-        {
-          "id": "css-2",
-          "title": "Flexbox Layouts",
-          "level": "Intermediate",
-          "duration": "15 min",
-          "content": "Flexbox is a 1D layout system. Set display: flex on a container; its children become flex items. Use justify-content for the main axis, align-items for the cross axis, and gap for spacing. Flex is perfect for navbars, cards, and centering things.",
-          "code": ".navbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 16px;\n  padding: 12px 24px;\n}\n\n.center-anything {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n}\n\n.card-row {\n  display: flex;\n  gap: 16px;\n  flex-wrap: wrap;\n}"
-        },
-        {
-          "id": "css-3",
-          "title": "CSS Grid",
-          "level": "Intermediate",
-          "duration": "16 min",
-          "content": "Grid is a 2D layout system. Define columns and rows with grid-template-columns and grid-template-rows. Use the fr unit for flexible fractions. Grid is ideal for page layouts, dashboards, and galleries.",
-          "code": ".dashboard {\n  display: grid;\n  grid-template-columns: 220px 1fr;\n  grid-template-rows: 60px 1fr;\n  grid-template-areas:\n    \"sidebar header\"\n    \"sidebar main\";\n  height: 100vh;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 12px;\n}"
-        },
-        {
-          "id": "css-4",
-          "title": "Animations & Transitions",
-          "level": "Intermediate",
-          "duration": "13 min",
-          "content": "Transitions animate between states smoothly. Animations define keyframes for more complex motion. Use transform and opacity for performance — they are GPU-accelerated. Avoid animating width, height, or top.",
-          "code": ".btn {\n  transition: transform 0.2s, background 0.2s;\n}\n.btn:hover {\n  transform: translateY(-2px);\n  background: #7C3AED;\n}\n\n@keyframes pulse {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.4; }\n}\n\n.live-dot {\n  width: 10px; height: 10px;\n  border-radius: 50%;\n  background: #10B981;\n  animation: pulse 1.5s infinite;\n}"
-        }
-      ]
+      "id": "m2",
+      "title": "JavaScript Essentials",
+      "icon": "code-2",
+      "color": "#A855F7",
+      "description": "JavaScript is the language of the web. This module takes you from variables to closures, the event loop, and async programming. By the end you can build interactive UIs, fetch data from APIs, and reason confidently about how JS executes.",
+      "level": "Beginner → Intermediate",
+      "duration": "4 weeks",
+      "lessons": 12,
+      "topics": [
+        "Values, types & operators",
+        "Variables, scope & hoisting",
+        "Functions, arrows & closures",
+        "Objects, arrays & destructuring",
+        "The DOM & events",
+        "Fetching data & promises",
+        "async / await",
+        "The event loop & concurrency",
+        "Error handling",
+        "Modules (ESM) & bundling",
+        "Storage: localStorage, IndexedDB",
+        "Debugging & DevTools"
+      ],
+      "skills": ["JavaScript", "DOM", "Async", "ES Modules"]
     },
     {
-      "id": "js",
-      "name": "JavaScript",
-      "icon": "braces",
-      "color": "#F7DF1E",
-      "lessons": [
-        {
-          "id": "js-1",
-          "title": "Variables, Types & Operators",
-          "level": "Beginner",
-          "duration": "12 min",
-          "content": "Use let for mutable bindings, const for immutable references, and never use var. JavaScript has 7 primitive types: string, number, boolean, null, undefined, symbol, bigint. Objects and arrays are reference types. === checks value and type; == does weird coercion — always use ===.",
-          "code": "const name = 'Ada';\nlet age = 28;\nconst isDev = true;\n\nconst skills = ['JS', 'CSS', 'HTML'];\nconst user = { name, age, isDev };\n\nconsole.log(typeof name);   // 'string'\nconsole.log(Array.isArray(skills)); // true\nconsole.log(5 === '5');     // false\nconsole.log(5 == '5');      // true (avoid!)"
-        },
-        {
-          "id": "js-2",
-          "title": "Functions, Arrows & Closures",
-          "level": "Intermediate",
-          "duration": "16 min",
-          "content": "Functions are first-class: they can be assigned, passed, and returned. Arrow functions don't bind their own this — perfect for callbacks. A closure is a function that remembers the variables from where it was created, even after that scope is gone.",
-          "code": "function add(a, b) { return a + b; }\n\nconst mul = (a, b) => a * b;\n\nconst counter = () => {\n  let count = 0;\n  return () => ++count;\n};\n\nconst next = counter();\nconsole.log(next()); // 1\nconsole.log(next()); // 2\nconsole.log(next()); // 3"
-        },
-        {
-          "id": "js-3",
-          "title": "DOM Manipulation & Events",
-          "level": "Intermediate",
-          "duration": "18 min",
-          "content": "The DOM is the live tree of HTML elements. Use querySelector and querySelectorAll to find elements. addEventListener attaches handlers. event.preventDefault() stops default actions. Use classList to toggle styles, and dataset to read data-* attributes.",
-          "code": "const btn = document.querySelector('#toggle');\nconst box = document.querySelector('.box');\n\nbtn.addEventListener('click', (e) => {\n  e.preventDefault();\n  box.classList.toggle('active');\n  console.log(box.dataset.userId);\n});\n\n// Event delegation\ndocument.querySelector('#list').addEventListener('click', (e) => {\n  if (e.target.matches('li')) {\n    console.log('Clicked:', e.target.textContent);\n  }\n});"
-        },
-        {
-          "id": "js-4",
-          "title": "Async JavaScript: Promises & async/await",
-          "level": "Advanced",
-          "duration": "20 min",
-          "content": "JavaScript is single-threaded but non-blocking. Promises represent future values. async/await is syntactic sugar over promises that makes async code read like sync code. Always wrap await in try/catch for error handling.",
-          "code": "// Promise\nfunction fetchUser(id) {\n  return fetch(`/api/users/${id}`).then(r => r.json());\n}\n\n// async/await\nasync function loadProfile(id) {\n  try {\n    const user = await fetchUser(id);\n    const posts = await fetch(`/api/users/${id}/posts`).then(r => r.json());\n    return { user, posts };\n  } catch (err) {\n    console.error('Failed:', err);\n    return null;\n  }\n}\n\n// Parallel\nconst [a, b] = await Promise.all([fetchUser(1), fetchUser(2)]);"
-        }
-      ]
-    },
-    {
-      "id": "python",
-      "name": "Python",
-      "icon": "snake",
-      "color": "#3776AB",
-      "lessons": [
-        {
-          "id": "py-1",
-          "title": "Syntax, Types & Control Flow",
-          "level": "Beginner",
-          "duration": "12 min",
-          "content": "Python uses indentation instead of braces. Variables are dynamically typed. Common types: int, float, str, bool, list, dict, tuple, set. Control flow uses if/elif/else, for, and while. List comprehensions are a Pythonic way to build lists.",
-          "code": "name = 'Ada'\nage = 28\nskills = ['python', 'js', 'sql']\nuser = {'name': name, 'age': age}\n\nif age >= 18:\n    print(f'{name} is an adult')\nelse:\n    print(f'{name} is a minor')\n\nfor s in skills:\n    print(s.upper())\n\nupper = [s.upper() for s in skills if 'p' in s]\nprint(upper)  # ['PYTHON']"
-        },
-        {
-          "id": "py-2",
-          "title": "Functions & Lambdas",
-          "level": "Beginner",
-          "duration": "10 min",
-          "content": "Define functions with def. Default arguments, *args, and **kwargs give flexibility. Lambdas are anonymous one-expression functions, useful for short callbacks like sorting keys.",
-          "code": "def greet(name, greeting='Hello'):\n    return f'{greeting}, {name}!'\n\nprint(greet('Ada'))            # Hello, Ada!\nprint(greet('Lin', 'Hi'))     # Hi, Lin!\n\ndef sum_all(*nums):\n    return sum(nums)\n\nprint(sum_all(1, 2, 3, 4))    # 10\n\nnums = [(1, 'b'), (2, 'a')]\nnums.sort(key=lambda x: x[1])\nprint(nums)  # [(2, 'a'), (1, 'b')]"
-        },
-        {
-          "id": "py-3",
-          "title": "Classes & OOP",
-          "level": "Intermediate",
-          "duration": "16 min",
-          "content": "Classes bundle data and behavior. __init__ is the constructor. self refers to the instance. Inheritance with class Child(Parent). Use @property for getters, @classmethod and @staticmethod for class-level methods.",
-          "code": "class Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        raise NotImplementedError\n\nclass Dog(Animal):\n    def speak(self):\n        return f'{self.name} says Woof!'\n\nclass Cat(Animal):\n    def speak(self):\n        return f'{self.name} says Meow!'\n\npets = [Dog('Rex'), Cat('Mia')]\nfor p in pets:\n    print(p.speak())"
-        },
-        {
-          "id": "py-4",
-          "title": "Decorators & Generators",
-          "level": "Advanced",
-          "duration": "18 min",
-          "content": "Decorators wrap functions to add behavior without modifying them. Generators use yield to produce values lazily — great for large data streams. Both are cornerstone Python features.",
-          "code": "import time\n\ndef timer(func):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        print(f'{func.__name__} took {time.time()-start:.3f}s')\n        return result\n    return wrapper\n\n@timer\ndef slow():\n    time.sleep(0.5)\n    return 'done'\n\ndef fib():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\ngen = fib()\nprint([next(gen) for _ in range(10)])"
-        }
-      ]
-    },
-    {
-      "id": "react",
-      "name": "React",
+      "id": "m3",
+      "title": "Modern React",
       "icon": "atom",
-      "color": "#61DAFB",
-      "lessons": [
-        {
-          "id": "react-1",
-          "title": "Components & JSX",
-          "level": "Beginner",
-          "duration": "12 min",
-          "content": "React apps are trees of components. A component is a function that returns JSX — a syntax extension that looks like HTML. Props are inputs to components. Always start component names with a capital letter.",
-          "code": "function Welcome({ name }) {\n  return <h1>Hello, {name}!</h1>;\n}\n\nfunction App() {\n  return (\n    <div>\n      <Welcome name=\"Ada\" />\n      <Welcome name=\"Lin\" />\n    </div>\n  );\n}\n\nexport default App;"
-        },
-        {
-          "id": "react-2",
-          "title": "State & Hooks",
-          "level": "Intermediate",
-          "duration": "16 min",
-          "content": "Hooks let function components use state and lifecycle. useState returns a value and setter. useEffect runs side effects — pass a dependency array to control when. Never call hooks inside loops, conditions, or nested functions.",
-          "code": "import { useState, useEffect } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  useEffect(() => {\n    document.title = `Count: ${count}`;\n  }, [count]);\n\n  return (\n    <button onClick={() => setCount(c => c + 1)}>\n      Clicked {count} times\n    </button>\n  );\n}"
-        },
-        {
-          "id": "react-3",
-          "title": "Context & useReducer",
-          "level": "Intermediate",
-          "duration": "18 min",
-          "content": "Context shares state across many components without prop drilling. useReducer manages complex state with actions — like Redux but built-in. Combine them for a global store.",
-          "code": "import { createContext, useContext, useReducer } from 'react';\n\nconst Store = createContext(null);\n\nfunction reducer(state, action) {\n  switch (action.type) {\n    case 'add':  return [...state, action.item];\n    case 'clear': return [];\n    default: return state;\n  }\n}\n\nexport function StoreProvider({ children }) {\n  const [items, dispatch] = useReducer(reducer, []);\n  return (\n    <Store.Provider value={{ items, dispatch }}>\n      {children}\n    </Store.Provider>\n  );\n}\n\nexport const useStore = () => useContext(Store);"
-        },
-        {
-          "id": "react-4",
-          "title": "Data Fetching & Custom Hooks",
-          "level": "Advanced",
-          "duration": "20 min",
-          "content": "Custom hooks reuse stateful logic across components. A common pattern is a useFetch hook that handles loading, error, and data. For real apps, consider React Query or SWR for caching and refetching.",
-          "code": "import { useState, useEffect } from 'react';\n\nfunction useFetch(url) {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  useEffect(() => {\n    let cancel = false;\n    setLoading(true);\n    fetch(url)\n      .then(r => r.json())\n      .then(d => { if (!cancel) setData(d); })\n      .catch(e => { if (!cancel) setError(e); })\n      .finally(() => { if (!cancel) setLoading(false); });\n    return () => { cancel = true; };\n  }, [url]);\n\n  return { data, loading, error };\n}"
-        }
-      ]
+      "color": "#06B6D4",
+      "description": "React is the industry standard for building UIs. You will learn components, hooks, state, effects, context, and how to structure real applications. We also cover performance, suspense, and the latest React features.",
+      "level": "Intermediate",
+      "duration": "5 weeks",
+      "lessons": 14,
+      "topics": [
+        "JSX & components",
+        "Props & state",
+        "useState & useEffect",
+        "useRef, useMemo, useCallback",
+        "Context & useReducer",
+        "Custom hooks",
+        "Forms & controlled inputs",
+        "Routing with React Router",
+        "Data fetching patterns",
+        "Suspense & lazy loading",
+        "Performance & memoization",
+        "Testing with Vitest",
+        "Next.js & SSR basics",
+        "Deploying a React app"
+      ],
+      "skills": ["React", "Hooks", "Routing", "Next.js"]
+    },
+    {
+      "id": "m4",
+      "title": "Python & Scripting",
+      "icon": "terminal",
+      "color": "#10B981",
+      "description": "Python is the Swiss army knife of programming. This module covers syntax, data structures, OOP, file I/O, decorators, generators, and how to build real CLI tools and automation scripts that save you hours every week.",
+      "level": "Beginner → Intermediate",
+      "duration": "4 weeks",
+      "lessons": 10,
+      "topics": [
+        "Syntax, indentation & types",
+        "Lists, dicts, tuples, sets",
+        "Control flow & comprehensions",
+        "Functions & lambdas",
+        "Classes & OOP",
+        "Decorators & generators",
+        "File I/O & context managers",
+        "Virtualenvs & pip",
+        "Building a CLI with argparse",
+        "Automation scripts"
+      ],
+      "skills": ["Python", "OOP", "Automation", "CLI"]
+    },
+    {
+      "id": "m5",
+      "title": "Backend & APIs",
+      "icon": "server",
+      "color": "#F59E0B",
+      "description": "Build real backends. You will learn REST, databases, authentication, and how to deploy. We use Node.js, Express, and Supabase to ship a production-grade API with row-level security and realtime subscriptions.",
+      "level": "Intermediate → Advanced",
+      "duration": "5 weeks",
+      "lessons": 12,
+      "topics": [
+        "Client-server model",
+        "REST & HTTP methods",
+        "Express.js fundamentals",
+        "Middleware & routing",
+        "SQL & PostgreSQL",
+        "Supabase setup & RLS",
+        "Auth: JWT & sessions",
+        "File uploads & storage",
+        "Realtime subscriptions",
+        "Rate limiting & caching",
+        "Testing APIs",
+        "Deployment & CI/CD"
+      ],
+      "skills": ["Node.js", "Express", "PostgreSQL", "Supabase"]
+    },
+    {
+      "id": "m6",
+      "title": "Computer Science Core",
+      "icon": "cpu",
+      "color": "#EF4444",
+      "description": "The theory that makes you a real engineer: data structures, algorithms, complexity, and problem-solving patterns. Essential for interviews and for writing code that scales beyond a toy app.",
+      "level": "Advanced",
+      "duration": "6 weeks",
+      "lessons": 16,
+      "topics": [
+        "Big-O notation",
+        "Arrays & strings",
+        "Linked lists",
+        "Stacks & queues",
+        "Hash tables",
+        "Trees & BSTs",
+        "Heaps & priority queues",
+        "Graphs & traversal",
+        "Sorting algorithms",
+        "Binary search",
+        "Recursion & backtracking",
+        "Dynamic programming",
+        "Greedy algorithms",
+        "Bit manipulation",
+        "System design basics",
+        "Interview strategy"
+      ],
+      "skills": ["DSA", "Algorithms", "System Design", "Interview Prep"]
     }
   ]
 }
