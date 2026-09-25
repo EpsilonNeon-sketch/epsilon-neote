@@ -1,136 +1,288 @@
 {
   "videos": [
+    /* --- HTML --- */
     {
       "id": "v1",
-      "title": "HTML Crash Course — Full Beginner Guide",
-      "description": "Learn HTML from scratch: tags, elements, forms, semantics, and structure in under an hour.",
+      "title": "HTML Full Course - Build a Website Tutorial",
+      "description": "Learn HTML in this complete course for beginners. You will learn tags, elements, forms, tables, and semantic HTML.",
       "category": "HTML",
       "level": "Beginner",
-      "duration": "52:14",
-      "thumbnail": "https://i.ytimg.com/vi/qz0aGYrrlhU/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/qz0aGYrrlhU",
-      "author": "Epsilon Neote"
+      "duration": "2:02:32",
+      "thumbnail": "https://i.ytimg.com/vi/pQN-pnXPaVg/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/pQN-pnXPaVg",
+      "author": "freeCodeCamp.org"
     },
     {
       "id": "v2",
-      "title": "CSS Mastery — Flexbox, Grid & Animations",
-      "description": "Master modern CSS with Flexbox, Grid, custom properties, transitions and keyframe animations.",
-      "category": "CSS",
-      "level": "Intermediate",
-      "duration": "1:08:42",
-      "thumbnail": "https://i.ytimg.com/vi/1Rs2ND1ryYc/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/1Rs2ND1ryYc",
-      "author": "Epsilon Neote"
+      "title": "HTML Crash Course For Beginners",
+      "description": "In this crash course I will cover the absolute basics of HTML5, including tags, attributes, and basic page structure.",
+      "category": "HTML",
+      "level": "Beginner",
+      "duration": "1:00:41",
+      "thumbnail": "https://i.ytimg.com/vi/UB1O30fR-EE/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/UB1O30fR-EE",
+      "author": "Traversy Media"
     },
     {
       "id": "v3",
-      "title": "JavaScript in 100 Minutes — Complete Course",
-      "description": "Variables, functions, closures, prototypes, async/await, DOM and the event loop explained.",
-      "category": "JavaScript",
+      "title": "HTML in 100 Seconds",
+      "description": "A quick, high-level overview of HTML, covering core syntax, structure, and semantic elements in 100 seconds.",
+      "category": "HTML",
       "level": "Beginner",
-      "duration": "1:42:09",
-      "thumbnail": "https://i.ytimg.com/vi/Eer4S7k9BOk/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/Eer4S7k9BOk",
-      "author": "Epsilon Neote"
+      "duration": "2:20",
+      "thumbnail": "https://i.ytimg.com/vi/ok-asp4lDA0/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/ok-asp4lDA0",
+      "author": "Fireship"
     },
     {
       "id": "v4",
-      "title": "Python for Developers — Deep Dive",
-      "description": "From syntax to OOP, decorators, generators, and building a real CLI tool with Python.",
-      "category": "Python",
+      "title": "HTML Forms Tutorial — Everything You Need to Know",
+      "description": "Deep dive into HTML form elements, input types, validation, labels, and accessibility best practices.",
+      "category": "HTML",
       "level": "Intermediate",
-      "duration": "2:01:33",
-      "thumbnail": "https://i.ytimg.com/vi/_uQrJ0TkZlc/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/_uQrJ0TkZlc",
-      "author": "Epsilon Neote"
+      "duration": "42:15",
+      "thumbnail": "https://i.ytimg.com/vi/fNcJuPIZ2WE/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/fNcJuPIZ2WE",
+      "author": "Dave Gray"
     },
     {
       "id": "v5",
-      "title": "React.js From Zero to Hero",
-      "description": "Components, hooks, state management, effects, context, and building a real app in React.",
-      "category": "React",
+      "title": "HTML Semantic Tags — Clean & Accessible Layouts",
+      "description": "Master semantic HTML tags like header, nav, main, section, article, and footer for improved SEO and accessibility.",
+      "category": "HTML",
       "level": "Intermediate",
-      "duration": "2:24:51",
-      "thumbnail": "https://i.ytimg.com/vi/SqcY0GlEMPk/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/SqcY0GlEMPk",
-      "author": "Epsilon Neote"
+      "duration": "28:10",
+      "thumbnail": "https://i.ytimg.com/vi/kGW8Al_cga4/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/kGW8Al_cga4",
+      "author": "Kevin Powell"
     },
+
+    /* --- CSS --- */
     {
       "id": "v6",
-      "title": "Git & GitHub — Developer Workflow",
-      "description": "Version control essentials: commits, branches, merges, pull requests and resolving conflicts.",
-      "category": "Tools",
+      "title": "CSS Tutorial - Zero to Hero (Full Course)",
+      "description": "Learn CSS from absolute basics to advanced layout techniques including Flexbox, Grid, and Animations.",
+      "category": "CSS",
       "level": "Beginner",
-      "duration": "37:18",
-      "thumbnail": "https://i.ytimg.com/vi/RGOj5yH7evE/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/RGOj5yH7evE",
-      "author": "Epsilon Neote"
+      "duration": "11:00:00",
+      "thumbnail": "https://i.ytimg.com/vi/OXG310887WU/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/OXG310887WU",
+      "author": "FreeCodeCamp.org"
     },
     {
       "id": "v7",
-      "title": "Tailwind CSS — Rapid UI Engineering",
-      "description": "Utility-first CSS, responsive design, dark mode, components and performance tips.",
+      "title": "Flexbox CSS In 20 Minutes",
+      "description": "Master CSS Flexbox alignment, direction, wrapping, and flex item properties in under 20 minutes.",
       "category": "CSS",
       "level": "Intermediate",
-      "duration": "48:55",
-      "thumbnail": "https://i.ytimg.com/vi/dFgzHOX0L4E/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/dFgzHOX0L4E",
-      "author": "Epsilon Neote"
+      "duration": "20:39",
+      "thumbnail": "https://i.ytimg.com/vi/fYq5PXgSsbE/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/fYq5PXgSsbE",
+      "author": "Web Dev Simplified"
     },
     {
       "id": "v8",
-      "title": "Async JavaScript — Promises & The Event Loop",
-      "description": "Deep dive into the JS event loop, microtasks, macrotasks, promises and async/await.",
-      "category": "JavaScript",
-      "level": "Advanced",
-      "duration": "55:02",
-      "thumbnail": "https://i.ytimg.com/vi/9rDUCdVE2Sc/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/9rDUCdVE2Sc",
-      "author": "Epsilon Neote"
+      "title": "CSS Grid Crash Course",
+      "description": "Learn modern grid layouts, template columns, areas, auto-fit, auto-fill, and implicit grids.",
+      "category": "CSS",
+      "level": "Intermediate",
+      "duration": "42:08",
+      "thumbnail": "https://i.ytimg.com/vi/jV8B24rSN5o/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/jV8B24rSN5o",
+      "author": "Traversy Media"
     },
     {
       "id": "v9",
-      "title": "Node.js & Express — Build a REST API",
-      "description": "Server-side JavaScript with Node, Express, routing, middleware, and connecting a database.",
-      "category": "Backend",
+      "title": "CSS Animations & Transitions Masterclass",
+      "description": "Create smooth UI transitions and custom keyframe animations using pure CSS.",
+      "category": "CSS",
       "level": "Advanced",
-      "duration": "1:14:27",
-      "thumbnail": "https://i.ytimg.com/vi/Oe421EPjeBE/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/Oe421EPjeBE",
-      "author": "Epsilon Neote"
+      "duration": "35:12",
+      "thumbnail": "https://i.ytimg.com/vi/zHUpx90NerM/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/zHUpx90NerM",
+      "author": "DesignCourse"
     },
     {
       "id": "v10",
-      "title": "Supabase — Auth, Database & Storage",
-      "description": "Build full-stack apps with Supabase: PostgreSQL, row-level security, auth and realtime.",
-      "category": "Backend",
-      "level": "Advanced",
-      "duration": "43:10",
-      "thumbnail": "https://i.ytimg.com/vi/ydz7Dhc5gMo/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/ydz7Dhc5gMo",
-      "author": "Epsilon Neote"
+      "title": "CSS Variables & Custom Properties",
+      "description": "Learn how to use CSS custom properties to manage design tokens, themes, and dark mode toggles efficiently.",
+      "category": "CSS",
+      "level": "Intermediate",
+      "duration": "18:45",
+      "thumbnail": "https://i.ytimg.com/vi/PHO6TBq_auI/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/PHO6TBq_auI",
+      "author": "Kevin Powell"
     },
+
+    /* --- JAVASCRIPT --- */
     {
       "id": "v11",
-      "title": "TypeScript — Type-Safe JavaScript",
-      "description": "Types, interfaces, generics, narrowing and how to migrate a JS codebase to TypeScript.",
+      "title": "JavaScript Tutorial for Beginners: Learn JS in 1 Hour",
+      "description": "Quick beginner overview covering variables, data types, arrays, functions, and control flow in JS.",
       "category": "JavaScript",
-      "level": "Advanced",
-      "duration": "1:01:45",
-      "thumbnail": "https://i.ytimg.com/vi/BCg4U1FzVdU/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/BCg4U1FzVdU",
-      "author": "Epsilon Neote"
+      "level": "Beginner",
+      "duration": "1:00:00",
+      "thumbnail": "https://i.ytimg.com/vi/W6NZfCO5SIk/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/W6NZfCO5SIk",
+      "author": "Programming with Mosh"
     },
     {
       "id": "v12",
-      "title": "Algorithms & Data Structures — Visualized",
-      "description": "Arrays, linked lists, trees, graphs, sorting and searching with visual animations.",
-      "category": "CS",
+      "title": "JavaScript Full Course 2024",
+      "description": "Comprehensive JavaScript guide starting from zero up to DOM manipulation, events, and modern ES6 syntax.",
+      "category": "JavaScript",
+      "level": "Beginner",
+      "duration": "12:00:00",
+      "thumbnail": "https://i.ytimg.com/vi/H3XIJYEP3xs/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/H3XIJYEP3xs",
+      "author": "Bro Code"
+    },
+    {
+      "id": "v13",
+      "title": "Async JavaScript — Promises, Async/Await & Fetch API",
+      "description": "Understand asynchronous JS execution, event loops, microtask queues, promises, and the Fetch API.",
+      "category": "JavaScript",
       "level": "Advanced",
-      "duration": "1:33:20",
-      "thumbnail": "https://i.ytimg.com/vi/8hly31xKli0/hqdefault.jpg",
-      "embed": "https://www.youtube.com/embed/8hly31xKli0",
-      "author": "Epsilon Neote"
+      "duration": "45:30",
+      "thumbnail": "https://i.ytimg.com/vi/VN29a43sLbc/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/VN29a43sLbc",
+      "author": "Traversy Media"
+    },
+    {
+      "id": "v14",
+      "title": "JavaScript DOM Manipulation Full Course",
+      "description": "Learn how to manipulate HTML elements, listen to events, query nodes, and dynamically render UI with JS.",
+      "category": "JavaScript",
+      "level": "Intermediate",
+      "duration": "1:20:00",
+      "thumbnail": "https://i.ytimg.com/vi/5fb2aPlgoys/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/5fb2aPlgoys",
+      "author": "FreeCodeCamp.org"
+    },
+    {
+      "id": "v15",
+      "title": "10 JavaScript Projects in 10 Hours",
+      "description": "Build 10 real-world JavaScript projects step-by-step to solidify your web development skills.",
+      "category": "JavaScript",
+      "level": "Intermediate",
+      "duration": "10:00:00",
+      "thumbnail": "https://i.ytimg.com/vi/dtKciwk_si4/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/dtKciwk_si4",
+      "author": "Florin Pop"
+    },
+
+    /* --- PYTHON --- */
+    {
+      "id": "v16",
+      "title": "Python for Beginners - Full Course",
+      "description": "Learn Python programming fundamentals: variables, strings, loops, functions, data structures, and OOP.",
+      "category": "Python",
+      "level": "Beginner",
+      "duration": "4:26:52",
+      "thumbnail": "https://i.ytimg.com/vi/_uQrJ0TkZlc/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/_uQrJ0TkZlc",
+      "author": "Programming with Mosh"
+    },
+    {
+      "id": "v17",
+      "title": "Python Object Oriented Programming (OOP) - For Beginners",
+      "description": "Master classes, instances, inheritance, encapsulation, and magic methods in Python.",
+      "category": "Python",
+      "level": "Intermediate",
+      "duration": "1:00:00",
+      "thumbnail": "https://i.ytimg.com/vi/JeznW_7dlB0/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/JeznW_7dlB0",
+      "author": "Corey Schafer"
+    },
+    {
+      "id": "v18",
+      "title": "Python in 100 Seconds",
+      "description": "Quick overview of Python's history, ecosystem, syntax simplicity, and use cases in AI/backend dev.",
+      "category": "Python",
+      "level": "Beginner",
+      "duration": "2:15",
+      "thumbnail": "https://i.ytimg.com/vi/x7X9w_GIm1s/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/x7X9w_GIm1s",
+      "author": "Fireship"
+    },
+    {
+      "id": "v19",
+      "title": "Python Decorators in 15 Minutes",
+      "description": "Learn how decorators work under the hood, first-class functions, closures, and practical decorator use cases.",
+      "category": "Python",
+      "level": "Advanced",
+      "duration": "15:20",
+      "thumbnail": "https://i.ytimg.com/vi/FsAPt_9Bf3U/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/FsAPt_9Bf3U",
+      "author": "ArjanCodes"
+    },
+    {
+      "id": "v20",
+      "title": "Build 12 Python Projects - Beginner Course",
+      "description": "Build 12 mini Python projects including games, guessing games, web scrapers, and command-line utilities.",
+      "category": "Python",
+      "level": "Beginner",
+      "duration": "3:10:00",
+      "thumbnail": "https://i.ytimg.com/vi/8ext9G7xspg/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/8ext9G7xspg",
+      "author": "FreeCodeCamp.org"
+    },
+
+    /* --- C# --- */
+    {
+      "id": "v21",
+      "title": "C# Full Course for Beginners",
+      "description": "Complete beginner tutorial covering C# fundamentals, types, control flow, arrays, and console apps.",
+      "category": "C#",
+      "level": "Beginner",
+      "duration": "4:31:00",
+      "thumbnail": "https://i.ytimg.com/vi/GhQdlIFylQ8/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/GhQdlIFylQ8",
+      "author": "freeCodeCamp.org"
+    },
+    {
+      "id": "v22",
+      "title": "C# Tutorial for Beginners",
+      "description": "Get started with C# development in Visual Studio, learning basic syntax, methods, and debugging.",
+      "category": "C#",
+      "level": "Beginner",
+      "duration": "1:03:00",
+      "thumbnail": "https://i.ytimg.com/vi/gfkTfcpWqAY/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/gfkTfcpWqAY",
+      "author": "Programming with Mosh"
+    },
+    {
+      "id": "v23",
+      "title": "C# OOP Tutorial — Object Oriented Programming",
+      "description": "Understand classes, interfaces, inheritance, polymorphism, and abstraction using modern C#.",
+      "category": "C#",
+      "level": "Intermediate",
+      "duration": "1:15:00",
+      "thumbnail": "https://i.ytimg.com/vi/M576WGiDBdQ/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/M576WGiDBdQ",
+      "author": "IAmTimCorey"
+    },
+    {
+      "id": "v24",
+      "title": "C# LINQ Tutorial — Master Queries in .NET",
+      "description": "Learn Language Integrated Query (LINQ) to filter, sort, map, and process collections efficiently in C#.",
+      "category": "C#",
+      "level": "Advanced",
+      "duration": "50:00",
+      "thumbnail": "https://i.ytimg.com/vi/5l2wA7I_Qfc/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/5l2wA7I_Qfc",
+      "author": "IAmTimCorey"
+    },
+    {
+      "id": "v25",
+      "title": "ASP.NET Core Web API — Full Course for Beginners",
+      "description": "Build RESTful APIs with C# and ASP.NET Core, controller structure, dependency injection, and Entity Framework.",
+      "category": "C#",
+      "level": "Advanced",
+      "duration": "2:30:00",
+      "thumbnail": "https://i.ytimg.com/vi/fmvcAzHpsfU/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/fmvcAzHpsfU",
+      "author": "FreeCodeCamp.org"
     }
   ]
 }
