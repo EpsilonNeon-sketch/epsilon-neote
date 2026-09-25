@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Git & Version Control",
+    "description": "Track changes, collaborate with teams, and manage code history with Git and GitHub.",
+    "icon": "git-branch",
+    "color": "#f97316",
+    "topics": [
+      { "title": "Initializing Repositories", "content": "git init creates a new repository in the current directory. git clone <url> copies an existing remote repository. The .git folder stores all version history. Never commit sensitive files — use .gitignore to exclude them.", "command": "git init\ngit clone https://github.com/user/repo.git" },
+      { "title": "Staging & Committing", "content": "git add stages changes for the next commit. git add . stages everything, git add -p stages interactively. git commit -m 'message' creates a snapshot. Write imperative commit messages: 'Add login form' not 'Added login form'.", "command": "git add .\ngit commit -m \"Add user authentication\"" },
+      { "title": "Branching & Merging", "content": "git branch <name> creates a branch, git checkout -b <name> creates and switches. Merge integrates another branch's changes. Rebase replays commits on top of another branch for a linear history.", "command": "git checkout -b feature/login\ngit merge main\ngit rebase main" },
+      { "title": "Remote Operations", "content": "git remote add origin <url> links a local repo to a remote. git push sends commits, git pull fetches and merges. git fetch downloads without merging — safer when you want to review first.", "command": "git remote add origin https://github.com/user/repo.git\ngit push -u origin main\ngit pull origin main" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Command Line Essentials",
+    "description": "Navigate filesystems, manage processes, and automate tasks from the terminal.",
+    "icon": "terminal",
+    "color": "#22c55e",
+    "topics": [
+      { "title": "Navigation", "content": "pwd prints the current directory. ls lists files, ls -la shows hidden files with details. cd changes directory — cd .. goes up, cd ~ goes home. Tab completion speeds up typing.", "command": "pwd\nls -la\ncd ~/projects" },
+      { "title": "File Operations", "content": "mkdir creates directories, touch creates empty files. cp copies, mv moves or renames. rm deletes files, rm -r deletes directories. Use rm carefully — there is no undo.", "command": "mkdir -p src/components\ntouch index.html\ncp config.json config.backup.json" },
+      { "title": "Searching & Filtering", "content": "grep searches file contents, find locates files by name. pipe (|) chains commands. head and tail show the beginning or end of files. wc counts lines, words, and characters.", "command": "grep -r \"TODO\" src/\nfind . -name \"*.js\" -type f\ncat log.txt | grep ERROR | wc -l" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Database Fundamentals",
+    "description": "Understand relational databases, SQL queries, and schema design patterns.",
+    "icon": "database",
+    "color": "#3b82f6",
+    "topics": [
+      { "title": "CRUD Operations", "content": "INSERT adds rows, SELECT reads, UPDATE modifies, DELETE removes. Always use WHERE clauses with UPDATE and DELETE to avoid affecting all rows. LIMIT constrains result count.", "command": "INSERT INTO users (name, email) VALUES ('Neo', 'neo@epsilon.dev');\nSELECT * FROM users WHERE active = true;\nUPDATE users SET role = 'admin' WHERE id = 1;\nDELETE FROM sessions WHERE expires_at < NOW();" },
+      { "title": "Joins & Relationships", "content": "INNER JOIN returns matching rows from both tables. LEFT JOIN returns all rows from the left table plus matches. Foreign keys enforce referential integrity. Junction tables handle many-to-many relationships.", "command": "SELECT u.name, o.total\nFROM users u\nINNER JOIN orders o ON u.id = o.user_id\nWHERE o.status = 'completed';" },
+      { "title": "Schema Design", "content": "Normalize to reduce redundancy: 1NF eliminates repeating groups, 2NF removes partial dependencies, 3NF eliminates transitive dependencies. Index columns used in WHERE and JOIN clauses. Add constraints like UNIQUE and NOT NULL to enforce data quality.", "command": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  email VARCHAR(255) UNIQUE NOT NULL,\n  name VARCHAR(100) NOT NULL,\n  created_at TIMESTAMP DEFAULT NOW()\n);" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "API Design & REST",
+    "description": "Design clean RESTful APIs with proper HTTP methods, status codes, and resource naming.",
+    "icon": "plug",
+    "color": "#a855f7",
+    "topics": [
+      { "title": "REST Principles", "content": "REST APIs use HTTP methods on resource URLs. GET reads, POST creates, PUT replaces, PATCH partially updates, DELETE removes. Use plural nouns for collections: /users not /user. Nest for relationships: /users/1/posts.", "command": "GET    /api/users        # List users\nPOST   /api/users        # Create user\nGET    /api/users/1      # Get user 1\nPATCH  /api/users/1      # Update user 1\nDELETE /api/users/1      # Delete user 1" },
+      { "title": "Status Codes & Errors", "content": "200 OK for success, 201 Created for POST success, 204 No Content for DELETE success. 400 Bad Request for validation errors, 401 Unauthorized for missing auth, 403 Forbidden for insufficient permissions, 404 Not Found. 500 Internal Server Error for unexpected failures.", "command": "200 OK           — Success\n201 Created       — Resource created\n400 Bad Request   — Validation failed\n401 Unauthorized  — Not authenticated\n404 Not Found     — Resource missing\n429 Too Many Requests — Rate limited" }
+    ]
+  }
+]
