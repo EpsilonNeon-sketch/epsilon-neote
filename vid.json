@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "HTML Crash Course",
+    "description": "Learn HTML fundamentals from scratch — tags, attributes, forms, semantic elements, and page structure.",
+    "thumbnail": "https://img.youtube.com/vi/qz0gyYrbQ7U/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/qz0gyYrbQ7U",
+    "duration": "1:02:34",
+    "category": "html",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 2,
+    "title": "CSS Crash Course",
+    "description": "Master CSS styling — selectors, box model, flexbox, grid, animations, and responsive design.",
+    "thumbnail": "https://img.youtube.com/vi/1Rs2N1XrVBE/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/1Rs2N1XrVBE",
+    "duration": "1:25:11",
+    "category": "css",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Crash Course",
+    "description": "Complete JavaScript guide — variables, functions, DOM manipulation, events, async/await, and ES6+.",
+    "thumbnail": "https://img.youtube.com/vi/Eerd5xBOHFI/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/Eerd5xBOHFI",
+    "duration": "1:40:33",
+    "category": "javascript",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 4,
+    "title": "Python Crash Course",
+    "description": "Learn Python programming — data types, loops, functions, OOP, file handling, and standard library.",
+    "thumbnail": "https://img.youtube.com/vi/6i0Vlj2A3Ns/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/6i0Vlj2A3Ns",
+    "duration": "2:09:24",
+    "category": "python",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 5,
+    "title": "React Crash Course 2024",
+    "description": "Modern React with hooks — components, state, props, useEffect, context, and building real UIs.",
+    "thumbnail": "https://img.youtube.com/vi/XK9E2DnSjs8/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/XK9E2DnSjs8",
+    "duration": "1:48:47",
+    "category": "react",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 6,
+    "title": "Node.js Crash Course",
+    "description": "Server-side JavaScript — Express, REST APIs, middleware, file system, and real-time apps.",
+    "thumbnail": "https://img.youtube.com/vi/fBNz5F-qlks/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/fBNz5F-qlks",
+    "duration": "1:06:48",
+    "category": "nodejs",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 7,
+    "title": "Git & GitHub Crash Course",
+    "description": "Version control essentials — commits, branches, merging, pull requests, and collaboration workflows.",
+    "thumbnail": "https://img.youtube.com/vi/RGOj5yH7avE/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/RGOj5yH7avE",
+    "duration": "32:20",
+    "category": "git",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 8,
+    "title": "TypeScript Crash Course",
+    "description": "Type-safe JavaScript — types, interfaces, generics, enums, and integrating with existing projects.",
+    "thumbnail": "https://img.youtube.com/vi/BCg4U3gBHeU/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/BCg4U3gBHeU",
+    "duration": "1:04:26",
+    "category": "typescript",
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 9,
+    "title": "Tailwind CSS Crash Course",
+    "description": "Utility-first CSS framework — setup, responsive design, custom components, and production builds.",
+    "thumbnail": "https://img.youtube.com/vi/V4tD1e9gY8o/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/V4tD1e9gY8o",
+    "duration": "1:22:15",
+    "category": "css",
+    "difficulty": "beginner"
+  },
+  {
+    "id": 10,
+    "title": "SQL Crash Course",
+    "description": "Database fundamentals — SELECT, INSERT, UPDATE, DELETE, JOINs, subqueries, and schema design.",
+    "thumbnail": "https://img.youtube.com/vi/HXV3O3h0Fpk/mqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/embed/HXV3O3h0Fpk",
+    "duration": "1:02:33",
+    "category": "sql",
+    "difficulty": "beginner"
+  }
+]
