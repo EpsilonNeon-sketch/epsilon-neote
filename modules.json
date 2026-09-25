@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "title": "Web Foundations",
+    "description": "Master the three pillars of the web: HTML, CSS, and JavaScript.",
+    "icon": "globe",
+    "color": "#f97316",
+    "lessons": [
+      { "title": "How the Web Works", "duration": "10 min", "type": "theory" },
+      { "title": "HTML Document Structure", "duration": "15 min", "type": "code" },
+      { "title": "Semantic HTML Elements", "duration": "12 min", "type": "code" },
+      { "title": "CSS Selectors & Properties", "duration": "18 min", "type": "code" },
+      { "title": "The Box Model", "duration": "14 min", "type": "theory" },
+      { "title": "Flexbox Layout", "duration": "20 min", "type": "code" },
+      { "title": "CSS Grid Layout", "duration": "20 min", "type": "code" },
+      { "title": "Responsive Design", "duration": "16 min", "type": "code" },
+      { "title": "JS Variables & Types", "duration": "15 min", "type": "code" },
+      { "title": "Functions & Scope", "duration": "18 min", "type": "code" },
+      { "title": "DOM Manipulation", "duration": "22 min", "type": "code" },
+      { "title": "Event Handling", "duration": "16 min", "type": "code" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "JavaScript Deep Dive",
+    "description": "Advanced JS concepts: closures, prototypes, async patterns, and ES6+ features.",
+    "icon": "file-code-2",
+    "color": "#eab308",
+    "lessons": [
+      { "title": "Closures & Lexical Scope", "duration": "20 min", "type": "code" },
+      { "title": "Prototypal Inheritance", "duration": "18 min", "type": "theory" },
+      { "title": "Promises & Async/Await", "duration": "25 min", "type": "code" },
+      { "title": "Destructuring & Spread", "duration": "12 min", "type": "code" },
+      { "title": "Map, Filter, Reduce", "duration": "20 min", "type": "code" },
+      { "title": "Error Handling Patterns", "duration": "15 min", "type": "code" },
+      { "title": "Modules & Imports", "duration": "14 min", "type": "code" },
+      { "title": "Classes & OOP in JS", "duration": "22 min", "type": "code" },
+      { "title": "Iterators & Generators", "duration": "16 min", "type": "code" },
+      { "title": "The Event Loop", "duration": "18 min", "type": "theory" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "React Fundamentals",
+    "description": "Build modern UIs with React — components, hooks, state management, and routing.",
+    "icon": "atom",
+    "color": "#3b82f6",
+    "lessons": [
+      { "title": "JSX & Components", "duration": "18 min", "type": "code" },
+      { "title": "Props & Data Flow", "duration": "15 min", "type": "code" },
+      { "title": "useState Hook", "duration": "20 min", "type": "code" },
+      { "title": "useEffect Hook", "duration": "22 min", "type": "code" },
+      { "title": "Conditional Rendering", "duration": "12 min", "type": "code" },
+      { "title": "Lists & Keys", "duration": "14 min", "type": "code" },
+      { "title": "Context API", "duration": "20 min", "type": "code" },
+      { "title": "useReducer Hook", "duration": "16 min", "type": "code" },
+      { "title": "React Router", "duration": "18 min", "type": "code" },
+      { "title": "Custom Hooks", "duration": "15 min", "type": "code" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Python Essentials",
+    "description": "Python from zero — syntax, data structures, OOP, file I/O, and real-world scripting.",
+    "icon": "terminal",
+    "color": "#22c55e",
+    "lessons": [
+      { "title": "Python Setup & REPL", "duration": "8 min", "type": "code" },
+      { "title": "Variables & Data Types", "duration": "15 min", "type": "code" },
+      { "title": "Control Flow", "duration": "14 min", "type": "code" },
+      { "title": "Lists & Tuples", "duration": "18 min", "type": "code" },
+      { "title": "Dictionaries & Sets", "duration": "16 min", "type": "code" },
+      { "title": "Functions & Lambdas", "duration": "20 min", "type": "code" },
+      { "title": "Classes & Inheritance", "duration": "22 min", "type": "code" },
+      { "title": "File I/O", "duration": "14 min", "type": "code" },
+      { "title": "Error Handling", "duration": "12 min", "type": "code" },
+      { "title": "Modules & Packages", "duration": "16 min", "type": "code" }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Backend & APIs",
+    "description": "Server-side development with Node.js, Express, REST APIs, and database integration.",
+    "icon": "server",
+    "color": "#a855f7",
+    "lessons": [
+      { "title": "HTTP Fundamentals", "duration": "12 min", "type": "theory" },
+      { "title": "Node.js Basics", "duration": "18 min", "type": "code" },
+      { "title": "Express Routing", "duration": "20 min", "type": "code" },
+      { "title": "Middleware Pattern", "duration": "16 min", "type": "code" },
+      { "title": "REST API Design", "duration": "22 min", "type": "code" },
+      { "title": "Request Validation", "duration": "14 min", "type": "code" },
+      { "title": "Database Connection", "duration": "18 min", "type": "code" },
+      { "title": "Authentication & JWT", "duration": "25 min", "type": "code" },
+      { "title": "Error Handling Middleware", "duration": "12 min", "type": "code" },
+      { "title": "Deployment Basics", "duration": "15 min", "type": "theory" }
+    ]
+  }
+]
