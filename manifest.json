@@ -1,0 +1,21 @@
+{
+  "name": "Epsilon Neote",
+  "short_name": "Neote",
+  "description": "Coding crash course platform — learn HTML, CSS, JS, Python, React and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "https://e-psilon.vercel.app/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://e-psilon.vercel.app/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
