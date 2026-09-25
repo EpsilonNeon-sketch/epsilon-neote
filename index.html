@@ -756,6 +756,8 @@
     let videoData = [];
     let modulesData = [];
     let lessonsData = [];
+    let toolsData = [];
+    let activeDiscoveryCat = 'all';
     let crashcourseData = [];
     let activeLessonCat = 'html';
     let activeVideoCat = 'all';
@@ -792,6 +794,7 @@
       renderModules();
       renderVideos();
       renderCrashCourses();
+      renderDiscovery();
     }
 
     // ---- Auth ----
@@ -859,7 +862,7 @@
 
     // ---- Navigation ----
     const sectionMap = {
-      dashboard: 'dashboardSection', lessons: 'lessonsSection', modules: 'modulesSection',
+      dashboard: 'dashboardSection', lessons: 'lessonsSection', discovery: 'discoverySection', modules: 'modulesSection',
       videos: 'videosSection', ide: 'ideSection', crashcourse: 'crashcourseSection',
       'ai-lab': 'aiLabSection', certification: 'certificationSection'
     };
