@@ -1,102 +1,136 @@
-[
-  {
-    "id": 1,
-    "title": "HTML Crash Course",
-    "description": "Learn HTML fundamentals from scratch — tags, attributes, forms, semantic elements, and page structure.",
-    "thumbnail": "https://img.youtube.com/vi/qz0gyYrbQ7U/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/qz0gyYrbQ7U",
-    "duration": "1:02:34",
-    "category": "html",
-    "difficulty": "beginner"
-  },
-  {
-    "id": 2,
-    "title": "CSS Crash Course",
-    "description": "Master CSS styling — selectors, box model, flexbox, grid, animations, and responsive design.",
-    "thumbnail": "https://img.youtube.com/vi/1Rs2N1XrVBE/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/1Rs2N1XrVBE",
-    "duration": "1:25:11",
-    "category": "css",
-    "difficulty": "beginner"
-  },
-  {
-    "id": 3,
-    "title": "JavaScript Crash Course",
-    "description": "Complete JavaScript guide — variables, functions, DOM manipulation, events, async/await, and ES6+.",
-    "thumbnail": "https://img.youtube.com/vi/Eerd5xBOHFI/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/Eerd5xBOHFI",
-    "duration": "1:40:33",
-    "category": "javascript",
-    "difficulty": "beginner"
-  },
-  {
-    "id": 4,
-    "title": "Python Crash Course",
-    "description": "Learn Python programming — data types, loops, functions, OOP, file handling, and standard library.",
-    "thumbnail": "https://img.youtube.com/vi/6i0Vlj2A3Ns/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/6i0Vlj2A3Ns",
-    "duration": "2:09:24",
-    "category": "python",
-    "difficulty": "beginner"
-  },
-  {
-    "id": 5,
-    "title": "React Crash Course 2024",
-    "description": "Modern React with hooks — components, state, props, useEffect, context, and building real UIs.",
-    "thumbnail": "https://img.youtube.com/vi/XK9E2DnSjs8/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/XK9E2DnSjs8",
-    "duration": "1:48:47",
-    "category": "react",
-    "difficulty": "intermediate"
-  },
-  {
-    "id": 6,
-    "title": "Node.js Crash Course",
-    "description": "Server-side JavaScript — Express, REST APIs, middleware, file system, and real-time apps.",
-    "thumbnail": "https://img.youtube.com/vi/fBNz5F-qlks/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/fBNz5F-qlks",
-    "duration": "1:06:48",
-    "category": "nodejs",
-    "difficulty": "intermediate"
-  },
-  {
-    "id": 7,
-    "title": "Git & GitHub Crash Course",
-    "description": "Version control essentials — commits, branches, merging, pull requests, and collaboration workflows.",
-    "thumbnail": "https://img.youtube.com/vi/RGOj5yH7avE/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/RGOj5yH7avE",
-    "duration": "32:20",
-    "category": "git",
-    "difficulty": "beginner"
-  },
-  {
-    "id": 8,
-    "title": "TypeScript Crash Course",
-    "description": "Type-safe JavaScript — types, interfaces, generics, enums, and integrating with existing projects.",
-    "thumbnail": "https://img.youtube.com/vi/BCg4U3gBHeU/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/BCg4U3gBHeU",
-    "duration": "1:04:26",
-    "category": "typescript",
-    "difficulty": "intermediate"
-  },
-  {
-    "id": 9,
-    "title": "Tailwind CSS Crash Course",
-    "description": "Utility-first CSS framework — setup, responsive design, custom components, and production builds.",
-    "thumbnail": "https://img.youtube.com/vi/V4tD1e9gY8o/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/V4tD1e9gY8o",
-    "duration": "1:22:15",
-    "category": "css",
-    "difficulty": "beginner"
-  },
-  {
-    "id": 10,
-    "title": "SQL Crash Course",
-    "description": "Database fundamentals — SELECT, INSERT, UPDATE, DELETE, JOINs, subqueries, and schema design.",
-    "thumbnail": "https://img.youtube.com/vi/HXV3O3h0Fpk/mqdefault.jpg",
-    "videoUrl": "https://www.youtube.com/embed/HXV3O3h0Fpk",
-    "duration": "1:02:33",
-    "category": "sql",
-    "difficulty": "beginner"
-  }
-]
+{
+  "videos": [
+    {
+      "id": "v1",
+      "title": "HTML Crash Course — Full Beginner Guide",
+      "description": "Learn HTML from scratch: tags, elements, forms, semantics, and structure in under an hour.",
+      "category": "HTML",
+      "level": "Beginner",
+      "duration": "52:14",
+      "thumbnail": "https://i.ytimg.com/vi/qz0aGYrrlhU/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/qz0aGYrrlhU",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v2",
+      "title": "CSS Mastery — Flexbox, Grid & Animations",
+      "description": "Master modern CSS with Flexbox, Grid, custom properties, transitions and keyframe animations.",
+      "category": "CSS",
+      "level": "Intermediate",
+      "duration": "1:08:42",
+      "thumbnail": "https://i.ytimg.com/vi/1Rs2ND1ryYc/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/1Rs2ND1ryYc",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v3",
+      "title": "JavaScript in 100 Minutes — Complete Course",
+      "description": "Variables, functions, closures, prototypes, async/await, DOM and the event loop explained.",
+      "category": "JavaScript",
+      "level": "Beginner",
+      "duration": "1:42:09",
+      "thumbnail": "https://i.ytimg.com/vi/Eer4S7k9BOk/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/Eer4S7k9BOk",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v4",
+      "title": "Python for Developers — Deep Dive",
+      "description": "From syntax to OOP, decorators, generators, and building a real CLI tool with Python.",
+      "category": "Python",
+      "level": "Intermediate",
+      "duration": "2:01:33",
+      "thumbnail": "https://i.ytimg.com/vi/_uQrJ0TkZlc/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/_uQrJ0TkZlc",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v5",
+      "title": "React.js From Zero to Hero",
+      "description": "Components, hooks, state management, effects, context, and building a real app in React.",
+      "category": "React",
+      "level": "Intermediate",
+      "duration": "2:24:51",
+      "thumbnail": "https://i.ytimg.com/vi/SqcY0GlEMPk/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/SqcY0GlEMPk",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v6",
+      "title": "Git & GitHub — Developer Workflow",
+      "description": "Version control essentials: commits, branches, merges, pull requests and resolving conflicts.",
+      "category": "Tools",
+      "level": "Beginner",
+      "duration": "37:18",
+      "thumbnail": "https://i.ytimg.com/vi/RGOj5yH7evE/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/RGOj5yH7evE",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v7",
+      "title": "Tailwind CSS — Rapid UI Engineering",
+      "description": "Utility-first CSS, responsive design, dark mode, components and performance tips.",
+      "category": "CSS",
+      "level": "Intermediate",
+      "duration": "48:55",
+      "thumbnail": "https://i.ytimg.com/vi/dFgzHOX0L4E/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/dFgzHOX0L4E",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v8",
+      "title": "Async JavaScript — Promises & The Event Loop",
+      "description": "Deep dive into the JS event loop, microtasks, macrotasks, promises and async/await.",
+      "category": "JavaScript",
+      "level": "Advanced",
+      "duration": "55:02",
+      "thumbnail": "https://i.ytimg.com/vi/9rDUCdVE2Sc/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/9rDUCdVE2Sc",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v9",
+      "title": "Node.js & Express — Build a REST API",
+      "description": "Server-side JavaScript with Node, Express, routing, middleware, and connecting a database.",
+      "category": "Backend",
+      "level": "Advanced",
+      "duration": "1:14:27",
+      "thumbnail": "https://i.ytimg.com/vi/Oe421EPjeBE/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/Oe421EPjeBE",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v10",
+      "title": "Supabase — Auth, Database & Storage",
+      "description": "Build full-stack apps with Supabase: PostgreSQL, row-level security, auth and realtime.",
+      "category": "Backend",
+      "level": "Advanced",
+      "duration": "43:10",
+      "thumbnail": "https://i.ytimg.com/vi/ydz7Dhc5gMo/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/ydz7Dhc5gMo",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v11",
+      "title": "TypeScript — Type-Safe JavaScript",
+      "description": "Types, interfaces, generics, narrowing and how to migrate a JS codebase to TypeScript.",
+      "category": "JavaScript",
+      "level": "Advanced",
+      "duration": "1:01:45",
+      "thumbnail": "https://i.ytimg.com/vi/BCg4U1FzVdU/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/BCg4U1FzVdU",
+      "author": "Epsilon Neote"
+    },
+    {
+      "id": "v12",
+      "title": "Algorithms & Data Structures — Visualized",
+      "description": "Arrays, linked lists, trees, graphs, sorting and searching with visual animations.",
+      "category": "CS",
+      "level": "Advanced",
+      "duration": "1:33:20",
+      "thumbnail": "https://i.ytimg.com/vi/8hly31xKli0/hqdefault.jpg",
+      "embed": "https://www.youtube.com/embed/8hly31xKli0",
+      "author": "Epsilon Neote"
+    }
+  ]
+}
