@@ -1393,6 +1393,307 @@
     document.getElementById('discoverySearch')?.addEventListener('input', () => {
       renderDiscovery();
     });
+    (function DiscoveryLoader() {
+  let toolsData = [];
+  let activeDiscoveryCat = 'all';
+  let isInitialized = false;
+
+  // ---- Color & mapping tables ----
+  const colorMap = {
+    blue:    { bg: 'rgba(59,130,246,0.12)',  text: '#60a5fa', border: 'rgba(59,130,246,0.25)' },
+    green:   { bg: 'rgba(16,185,129,0.12)',  text: '#6ee7b7', border: 'rgba(16,185,129,0.25)' },
+    orange:  { bg: 'rgba(245,158,11,0.12)',  text: '#fbbf24', border: 'rgba(245,158,11,0.25)' },
+    purple:  { bg: 'rgba(139,92,246,0.12)',  text: '#a78bfa', border: 'rgba(139,92,246,0.25)' },
+    gray:    { bg: 'rgba(148,163,184,0.10)', text: '#94a3b8', border: 'rgba(148,163,184,0.2)' },
+    red:     { bg: 'rgba(239,68,68,0.12)',   text: '#f87171', border: 'rgba(239,68,68,0.25)' }
+  };
+
+  const difficultyClassMap = {
+    'Beginner-Friendly': 'difficulty-badge-beginner',
+    'Intermediate':      'difficulty-badge-intermediate',
+    'Advanced':          'difficulty-badge-advanced'
+  };
+
+  const categoryIconMap = {
+    'game-engine':     'gamepad-2',
+    'editor':          'code-2',
+    'version-control': 'git-branch',
+    'devops':          'container',
+    'design':          'pen-tool',
+    'build-tool':      'package',
+    'hosting':         'cloud',
+    'api':             'send'
+  };
+
+  // ---- Fetch tools.json with retry ----
+  async function fetchTools(retries = 3) {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      try {
+        const res = await fetch('tools.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) {
+          console.warn(`Discovery: tools.json returned empty array (attempt ${attempt})`);
+          continue;
+        }
+        console.log(`Discovery: loaded ${data.length} tools on attempt ${attempt}`);
+        return data;
+      } catch (err) {
+        console.warn(`Discovery: fetch failed attempt ${attempt}/${retries}`, err.message);
+        if (attempt < retries) await new Promise(r => setTimeout(r, 600 * attempt));
+      }
+    }
+    console.error('Discovery: all fetch attempts failed — using fallback data');
+    return getFallbackData();
+  }
+
+  // ---- Fallback if fetch fails completely ----
+  function getFallbackData() {
+    return [
+      { id:'unity',   name:'Unity',         category:'game-engine', icon:'gamepad-2', color:'gray',   description:'Cross-platform game engine for 2D/3D, AR/VR using C#.', tags:['C#','3D','2D','AR/VR'], difficulty:'Beginner-Friendly', website:'https://unity.com', featured:true },
+      { id:'unreal',  name:'Unreal Engine', category:'game-engine', icon:'flame',     color:'blue',   description:'AAA-grade engine with Blueprint visual scripting and C++.', tags:['C++','Blueprints','3D','AAA'], difficulty:'Advanced', website:'https://unrealengine.com', featured:true },
+      { id:'godot',   name:'Godot',         category:'game-engine', icon:'sparkles',  color:'blue',   description:'Free open-source engine using GDScript. Great for 2D.', tags:['GDScript','Open Source','2D'], difficulty:'Beginner-Friendly', website:'https://godotengine.org', featured:false },
+      { id:'vscode',  name:'VS Code',       category:'editor',      icon:'code-2',    color:'blue',   description:'Lightweight extensible code editor by Microsoft.', tags:['Extensions','Debugging','Git'], difficulty:'Beginner-Friendly', website:'https://code.visualstudio.com', featured:true },
+      { id:'git',     name:'Git & GitHub',  category:'version-control', icon:'git-branch', color:'orange', description:'Distributed version control and collaboration platform.', tags:['Version Control','Collaboration'], difficulty:'Intermediate', website:'https://github.com', featured:true },
+      { id:'figma',   name:'Figma',         category:'design',      icon:'pen-tool',  color:'purple', description:'Collaborative UI/UX design tool in the browser.', tags:['UI/UX','Prototyping','Collaboration'], difficulty:'Beginner-Friendly', website:'https://figma.com', featured:true }
+    ];
+  }
+
+  // ---- Render ----
+  function renderDiscovery() {
+    const searchEl = document.getElementById('discoverySearch');
+    const search   = (searchEl ? searchEl.value : '').toLowerCase().trim();
+    let filtered   = toolsData;
+
+    if (activeDiscoveryCat !== 'all') {
+      filtered = filtered.filter(t => t.category === activeDiscoveryCat);
+    }
+    if (search) {
+      filtered = filtered.filter(t =>
+        t.name.toLowerCase().includes(search) ||
+        t.description.toLowerCase().includes(search) ||
+        (t.tags && t.tags.some(tag => tag.toLowerCase().includes(search))) ||
+        t.category.toLowerCase().includes(search)
+      );
+    }
+
+    // ---- Featured ----
+    const featuredEl     = document.getElementById('discoveryFeatured');
+    const featuredContent = document.getElementById('discoveryFeaturedContent');
+    const featured       = toolsData.find(t => t.featured);
+
+    if (featured && activeDiscoveryCat === 'all' && !search) {
+      featuredEl.classList.remove('hidden');
+      const fc = colorMap[featured.color] || colorMap.purple;
+      featuredContent.innerHTML = `
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:${fc.bg};border:1px solid ${fc.border};">
+            <i data-lucide="${featured.icon || 'wrench'}" class="w-6 h-6" style="color:${fc.text}"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h4 class="font-bold text-white text-base mb-1">${featured.name}</h4>
+            <p class="text-sm text-slate-400 mb-2">${featured.description}</p>
+            <a href="${featured.website}" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-400 hover:text-brand-300 transition">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Visit website
+            </a>
+          </div>
+        </div>`;
+    } else if (featuredEl) {
+      featuredEl.classList.add('hidden');
+    }
+
+    // ---- Cards ----
+    const list    = document.getElementById('discoveryList');
+    const emptyEl = document.getElementById('discoveryEmpty');
+
+    if (!list) return;
+
+    if (filtered.length === 0) {
+      list.innerHTML = '';
+      if (emptyEl) { emptyEl.classList.remove('hidden'); emptyEl.classList.add('flex'); }
+    } else {
+      if (emptyEl) { emptyEl.classList.add('hidden'); emptyEl.classList.remove('flex'); }
+      list.innerHTML = filtered.map(tool => {
+        const c        = colorMap[tool.color] || colorMap.purple;
+        const diffCl   = difficultyClassMap[tool.difficulty] || 'difficulty-badge-intermediate';
+        const catIcon  = categoryIconMap[tool.category] || 'wrench';
+        const tagsHTML = (tool.tags || []).slice(0, 4).map(t => `<span class="discovery-tag">${t}</span>`).join(' ');
+        return `
+          <div class="glass discovery-card p-5 rounded-xl" data-tool-id="${tool.id}">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:${c.bg};border:1px solid ${c.border};">
+                <i data-lucide="${tool.icon || catIcon}" class="w-5 h-5" style="color:${c.text}"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-white text-sm truncate">${tool.name}</h4>
+                <span class="inline-block mt-0.5 px-2 py-0.5 rounded-full text-[0.6rem] font-semibold ${diffCl}">${tool.difficulty || 'Intermediate'}</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-400 mb-3 line-clamp-2 leading-relaxed">${tool.description}</p>
+            <div class="flex flex-wrap gap-1.5">${tagsHTML}</div>
+          </div>`;
+      }).join('');
+    }
+
+    reinitIcons();
+    bindCardClicks();
+  }
+
+  // ---- Modal ----
+  function openToolModal(toolId) {
+    const tool = toolsData.find(t => t.id === toolId);
+    if (!tool) return;
+
+    const c        = colorMap[tool.color] || colorMap.purple;
+    const diffCl   = difficultyClassMap[tool.difficulty] || 'difficulty-badge-intermediate';
+    const catIcon  = categoryIconMap[tool.category] || 'wrench';
+    const tagsHTML = (tool.tags || []).map(t => `<span class="discovery-tag">${t}</span>`).join(' ');
+
+    const modalCard = document.getElementById('discoveryModalCard');
+    if (!modalCard) return;
+
+    modalCard.innerHTML = `
+      <div class="p-6">
+        <div class="flex items-start justify-between mb-5">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style="background:${c.bg};border:1px solid ${c.border};">
+              <i data-lucide="${tool.icon || catIcon}" class="w-7 h-7" style="color:${c.text}"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">${tool.name}</h3>
+              <div class="flex items-center gap-2 mt-1">
+                <span class="px-2.5 py-0.5 rounded-full text-[0.65rem] font-semibold ${diffCl}">${tool.difficulty || 'Intermediate'}</span>
+                <span class="text-xs text-slate-500 capitalize">${tool.category.replace('-', ' ')}</span>
+              </div>
+            </div>
+          </div>
+          <button class="discovery-modal-close w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white/10 transition text-slate-400 hover:text-white">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed mb-5">${tool.description}</p>
+        <div class="mb-5">
+          <h5 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Tags</h5>
+          <div class="flex flex-wrap gap-2">${tagsHTML}</div>
+        </div>
+        <div class="flex gap-3">
+          <a href="${tool.website}" target="_blank" rel="noopener"
+             class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold rounded-lg transition">
+            <i data-lucide="external-link" class="w-4 h-4"></i> Visit Website
+          </a>
+          <button class="discovery-modal-close px-4 py-2.5 glass-raised text-sm font-medium text-slate-300 rounded-lg hover:text-white transition">
+            Close
+          </button>
+        </div>
+      </div>`;
+
+    const modal = document.getElementById('discoveryModal');
+    if (modal) modal.classList.add('open');
+    reinitIcons();
+  }
+
+  function closeToolModal() {
+    const modal = document.getElementById('discoveryModal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  // ---- Re-initialize Lucide icons ----
+  function reinitIcons() {
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      try { lucide.createIcons(); } catch (e) { /* ignore */ }
+    }
+  }
+
+  // ---- Bind card clicks (delegated, re-bound after each render) ----
+  function bindCardClicks() {
+    const list = document.getElementById('discoveryList');
+    if (!list) return;
+    list.querySelectorAll('[data-tool-id]').forEach(card => {
+      card.removeEventListener('click', card._discoveryHandler);
+      card._discoveryHandler = () => openToolModal(card.dataset.toolId);
+      card.addEventListener('click', card._discoveryHandler);
+    });
+  }
+
+  // ---- Bind one-time listeners ----
+  function bindListeners() {
+    // Category tabs
+    document.querySelectorAll('[data-dcat]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-dcat]').forEach(b => {
+          b.classList.remove('active-tab');
+          b.classList.add('text-slate-400');
+        });
+        btn.classList.add('active-tab');
+        btn.classList.remove('text-slate-400');
+        activeDiscoveryCat = btn.dataset.dcat;
+        renderDiscovery();
+      });
+    });
+
+    // Search
+    const searchEl = document.getElementById('discoverySearch');
+    if (searchEl) {
+      searchEl.addEventListener('input', () => renderDiscovery());
+    }
+
+    // Modal backdrop close
+    const modal = document.getElementById('discoveryModal');
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target.id === 'discoveryModal') closeToolModal();
+      });
+    }
+
+    // Modal close buttons (delegated)
+    const modalCard = document.getElementById('discoveryModalCard');
+    if (modalCard) {
+      modalCard.addEventListener('click', (e) => {
+        if (e.target.closest('.discovery-modal-close')) closeToolModal();
+      });
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeToolModal();
+    });
+  }
+
+  // ---- Expose to global scope for navigation ----
+  window.renderDiscovery = renderDiscovery;
+  window.getDiscoveryToolsData = () => toolsData;
+
+  // ---- Boot ----
+  async function boot() {
+    if (isInitialized) return;
+    isInitialized = true;
+
+    console.log('Discovery: booting...');
+    toolsData = await fetchTools();
+    bindListeners();
+    renderDiscovery();
+    console.log(`Discovery: ready — ${toolsData.length} tools loaded`);
+  }
+
+  // Wait for DOM, then boot
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    // DOM already parsed (script at bottom of body)
+    boot();
+  }
+
+  // Also re-render when navigating to the discovery page
+  // (in case the section was hidden during initial render)
+  document.addEventListener('discovery:render', () => {
+    if (toolsData.length === 0) {
+      fetchTools().then(data => { toolsData = data; renderDiscovery(); });
+    } else {
+      renderDiscovery();
+    }
+  });
+})();
   </script>
 </body>
 </html>
