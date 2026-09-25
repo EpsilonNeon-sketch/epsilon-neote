@@ -30,12 +30,38 @@
     }
   </script>
   <style>
+
     :root {
       --brand: #7c3aed; --brand-light: #a78bfa; --brand-glow: rgba(124,58,237,0.35);
       --surface: #0d0a1e; --surface-card: #16132a; --surface-raised: #1e1b2e;
       --text: #e2e8f0; --text-muted: #94a3b8; --text-dim: #64748b;
       --border: rgba(124,58,237,0.15); --border-active: rgba(124,58,237,0.4);
     }
+        /* Discovery card */
+    .discovery-card {
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .discovery-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(124,58,237,0.15);
+      border-color: rgba(124,58,237,0.35);
+    }
+    .discovery-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      background: rgba(124,58,237,0.12);
+      color: #a78bfa;
+      letter-spacing: 0.02em;
+    }
+    .difficulty-badge-beginner { background: rgba(16,185,129,0.12); color: #6ee7b7; }
+    .difficulty-badge-intermediate { background: rgba(245,158,11,0.12); color: #fbbf24; }
+    .difficulty-badge-advanced { background: rgba(239,68,68,0.12); color: #f87171; }
+    #discoveryModal { display: none; }
+    #discoveryModal.open { display: flex; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family:'Space Grotesk',sans-serif; background:var(--surface); color:var(--text); margin:0; min-height:100vh; }
@@ -207,6 +233,7 @@
       <nav class="space-y-1 mb-5">
         <button class="nav-btn" data-page="dashboard"><i data-lucide="layout-dashboard" class="w-[18px] h-[18px]"></i><span>Dashboard</span></button>
         <button class="nav-btn" data-page="lessons"><i data-lucide="book-open" class="w-[18px] h-[18px]"></i><span>Lessons</span></button>
+        <button class="nav-btn" data-page="discovery"><i data-lucide="compass" class="w-[18px] h-[18px]"></i><span>Discovery</span></button>
         <button class="nav-btn" data-page="modules"><i data-lucide="boxes" class="w-[18px] h-[18px]"></i><span>Modules</span></button>
         <button class="nav-btn" data-page="videos"><i data-lucide="play-circle" class="w-[18px] h-[18px]"></i><span>Videos</span></button>
         <button class="nav-btn" data-page="ide"><i data-lucide="terminal-square" class="w-[18px] h-[18px]"></i><span>Code IDE</span></button>
@@ -334,7 +361,55 @@
         </div>
         <div id="lessonsList" class="space-y-4"></div>
       </div>
+      <!-- ===== DISCOVERY SECTION ===== -->
+      <div id="discoverySection" class="section hidden">
+        <h2 class="text-xl font-bold text-white mb-1">Discovery</h2>
+        <p class="text-sm text-slate-400 mb-5">Explore tools, game engines, and platforms every developer should know.</p>
 
+        <!-- Search bar -->
+        <div class="glass p-3 rounded-xl flex items-center gap-3 mb-5">
+          <i data-lucide="search" class="w-5 h-5 text-slate-500 flex-shrink-0"></i>
+          <input id="discoverySearch" type="text" placeholder="Search tools..." class="bg-transparent border-none outline-none text-sm text-white placeholder-slate-500 w-full font-display">
+        </div>
+
+        <!-- Category filter tabs -->
+        <div class="flex flex-wrap gap-2 mb-6" id="discoveryTabs">
+          <button class="lesson-tab active-tab text-xs" data-dcat="all">All</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="game-engine">Game Engines</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="editor">Editors</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="version-control">Version Control</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="devops">DevOps</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="design">Design</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="build-tool">Build Tools</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="hosting">Hosting</button>
+          <button class="lesson-tab text-xs text-slate-400" data-dcat="api">API</button>
+        </div>
+
+        <!-- Featured banner -->
+        <div id="discoveryFeatured" class="glass p-5 rounded-xl mb-6 hidden">
+          <div class="flex items-center gap-2 mb-3">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400"></i>
+            <span class="text-xs font-semibold text-yellow-400 uppercase tracking-wider">Featured Pick</span>
+          </div>
+          <div id="discoveryFeaturedContent"></div>
+        </div>
+
+        <!-- Tool cards grid -->
+        <div id="discoveryList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+        <!-- Empty state -->
+        <div id="discoveryEmpty" class="hidden flex flex-col items-center justify-center py-16 text-center">
+          <i data-lucide="search-x" class="w-12 h-12 text-slate-600 mb-3"></i>
+          <p class="text-slate-400 text-sm">No tools match your search.</p>
+        </div>
+
+        <!-- Tool detail modal -->
+        <div id="discoveryModal" class="fixed inset-0 z-[500] hidden items-center justify-center p-4" style="background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);">
+          <div class="glass p-0 rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto animate-fade-up" id="discoveryModalCard">
+            <!-- Dynamic content injected here -->
+          </div>
+        </div>
+      </div>
       <!-- ===== MODULES SECTION ===== -->
       <div id="modulesSection" class="section hidden">
         <h2 class="text-xl font-bold text-white mb-4">Learning Modules</h2>
@@ -1136,6 +1211,184 @@
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
       checkSession();
+    });
+    // ---- Discovery ----
+    const difficultyClassMap = {
+      'Beginner-Friendly': 'difficulty-badge-beginner',
+      'Intermediate': 'difficulty-badge-intermediate',
+      'Advanced': 'difficulty-badge-advanced'
+    };
+
+    const categoryIconMap = {
+      'game-engine': 'gamepad-2',
+      'editor': 'code-2',
+      'version-control': 'git-branch',
+      'devops': 'container',
+      'design': 'pen-tool',
+      'build-tool': 'package',
+      'hosting': 'cloud',
+      'api': 'send'
+    };
+
+    const colorMap = {
+      blue: { bg: 'rgba(59,130,246,0.12)', text: '#60a5fa', border: 'rgba(59,130,246,0.25)' },
+      green: { bg: 'rgba(16,185,129,0.12)', text: '#6ee7b7', border: 'rgba(16,185,129,0.25)' },
+      orange: { bg: 'rgba(245,158,11,0.12)', text: '#fbbf24', border: 'rgba(245,158,11,0.25)' },
+      purple: { bg: 'rgba(139,92,246,0.12)', text: '#a78bfa', border: 'rgba(139,92,246,0.25)' },
+      gray: { bg: 'rgba(148,163,184,0.10)', text: '#94a3b8', border: 'rgba(148,163,184,0.2)' },
+      red: { bg: 'rgba(239,68,68,0.12)', text: '#f87171', border: 'rgba(239,68,68,0.25)' }
+    };
+
+    function renderDiscovery() {
+      const search = (document.getElementById('discoverySearch')?.value || '').toLowerCase();
+      let filtered = toolsData;
+
+      if (activeDiscoveryCat !== 'all') {
+        filtered = filtered.filter(t => t.category === activeDiscoveryCat);
+      }
+      if (search) {
+        filtered = filtered.filter(t =>
+          t.name.toLowerCase().includes(search) ||
+          t.description.toLowerCase().includes(search) ||
+          (t.tags && t.tags.some(tag => tag.toLowerCase().includes(search)))
+        );
+      }
+
+      // Featured
+      const featured = toolsData.find(t => t.featured);
+      const featuredEl = document.getElementById('discoveryFeatured');
+      const featuredContent = document.getElementById('discoveryFeaturedContent');
+      if (featured && activeDiscoveryCat === 'all' && !search) {
+        featuredEl.classList.remove('hidden');
+        const fc = colorMap[featured.color] || colorMap.purple;
+        featuredContent.innerHTML = `
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:${fc.bg};border:1px solid ${fc.border};">
+              <i data-lucide="${featured.icon || 'wrench'}" class="w-6 h-6" style="color:${fc.text}"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-bold text-white text-base mb-1">${featured.name}</h4>
+              <p class="text-sm text-slate-400 mb-2 line-clamp-2">${featured.description}</p>
+              <a href="${featured.website}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-400 hover:text-brand-300 transition">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Visit website
+              </a>
+            </div>
+          </div>`;
+      } else {
+        featuredEl.classList.add('hidden');
+      }
+
+      // Cards
+      const list = document.getElementById('discoveryList');
+      const emptyEl = document.getElementById('discoveryEmpty');
+      if (filtered.length === 0) {
+        list.innerHTML = '';
+        emptyEl.classList.remove('hidden');
+        emptyEl.classList.add('flex');
+      } else {
+        emptyEl.classList.add('hidden');
+        emptyEl.classList.remove('flex');
+        list.innerHTML = filtered.map(tool => {
+          const c = colorMap[tool.color] || colorMap.purple;
+          const diffClass = difficultyClassMap[tool.difficulty] || 'difficulty-badge-intermediate';
+          const catIcon = categoryIconMap[tool.category] || 'wrench';
+          const tagsHTML = (tool.tags || []).slice(0, 4).map(t => `<span class="discovery-tag">${t}</span>`).join(' ');
+          return `
+            <div class="glass discovery-card p-5 rounded-xl" onclick="openToolModal('${tool.id}')">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:${c.bg};border:1px solid ${c.border};">
+                  <i data-lucide="${tool.icon || catIcon}" class="w-5 h-5" style="color:${c.text}"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="font-bold text-white text-sm truncate">${tool.name}</h4>
+                  <span class="inline-block mt-0.5 px-2 py-0.5 rounded-full text-[0.6rem] font-semibold ${diffClass}">${tool.difficulty || 'Intermediate'}</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-400 mb-3 line-clamp-2 leading-relaxed">${tool.description}</p>
+              <div class="flex flex-wrap gap-1.5">${tagsHTML}</div>
+            </div>`;
+        }).join('');
+      }
+      lucide.createIcons();
+    }
+
+    function openToolModal(toolId) {
+      const tool = toolsData.find(t => t.id === toolId);
+      if (!tool) return;
+      const c = colorMap[tool.color] || colorMap.purple;
+      const diffClass = difficultyClassMap[tool.difficulty] || 'difficulty-badge-intermediate';
+      const catIcon = categoryIconMap[tool.category] || 'wrench';
+      const tagsHTML = (tool.tags || []).map(t => `<span class="discovery-tag">${t}</span>`).join(' ');
+      const modalCard = document.getElementById('discoveryModalCard');
+      modalCard.innerHTML = `
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-5">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style="background:${c.bg};border:1px solid ${c.border};">
+                <i data-lucide="${tool.icon || catIcon}" class="w-7 h-7" style="color:${c.text}"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">${tool.name}</h3>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="px-2.5 py-0.5 rounded-full text-[0.65rem] font-semibold ${diffClass}">${tool.difficulty || 'Intermediate'}</span>
+                  <span class="text-xs text-slate-500 capitalize">${tool.category.replace('-', ' ')}</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="closeToolModal()" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white/10 transition text-slate-400 hover:text-white">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-5">${tool.description}</p>
+          <div class="mb-5">
+            <h5 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Tags</h5>
+            <div class="flex flex-wrap gap-2">${tagsHTML}</div>
+          </div>
+          <div class="flex gap-3">
+            <a href="${tool.website}" target="_blank" rel="noopener"
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold rounded-lg transition">
+              <i data-lucide="external-link" class="w-4 h-4"></i> Visit Website
+            </a>
+            <button onclick="closeToolModal()" class="px-4 py-2.5 glass-raised text-sm font-medium text-slate-300 rounded-lg hover:text-white transition">
+              Close
+            </button>
+          </div>
+        </div>`;
+      document.getElementById('discoveryModal').classList.add('open');
+      lucide.createIcons();
+    }
+
+    function closeToolModal() {
+      document.getElementById('discoveryModal').classList.remove('open');
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('discoveryModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'discoveryModal') closeToolModal();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeToolModal();
+    });
+
+    // Discovery tab clicks
+    document.querySelectorAll('[data-dcat]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-dcat]').forEach(b => {
+          b.classList.remove('active-tab');
+          b.classList.add('text-slate-400');
+        });
+        btn.classList.add('active-tab');
+        btn.classList.remove('text-slate-400');
+        activeDiscoveryCat = btn.dataset.dcat;
+        renderDiscovery();
+      });
+    });
+
+    // Discovery search
+    document.getElementById('discoverySearch')?.addEventListener('input', () => {
+      renderDiscovery();
     });
   </script>
 </body>
