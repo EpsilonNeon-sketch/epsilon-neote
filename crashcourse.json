@@ -1,50 +1,144 @@
-[
-  {
-    "id": 1,
-    "title": "Git & Version Control",
-    "description": "Track changes, collaborate with teams, and manage code history with Git and GitHub.",
-    "icon": "git-branch",
-    "color": "#f97316",
-    "topics": [
-      { "title": "Initializing Repositories", "content": "git init creates a new repository in the current directory. git clone <url> copies an existing remote repository. The .git folder stores all version history. Never commit sensitive files — use .gitignore to exclude them.", "command": "git init\ngit clone https://github.com/user/repo.git" },
-      { "title": "Staging & Committing", "content": "git add stages changes for the next commit. git add . stages everything, git add -p stages interactively. git commit -m 'message' creates a snapshot. Write imperative commit messages: 'Add login form' not 'Added login form'.", "command": "git add .\ngit commit -m \"Add user authentication\"" },
-      { "title": "Branching & Merging", "content": "git branch <name> creates a branch, git checkout -b <name> creates and switches. Merge integrates another branch's changes. Rebase replays commits on top of another branch for a linear history.", "command": "git checkout -b feature/login\ngit merge main\ngit rebase main" },
-      { "title": "Remote Operations", "content": "git remote add origin <url> links a local repo to a remote. git push sends commits, git pull fetches and merges. git fetch downloads without merging — safer when you want to review first.", "command": "git remote add origin https://github.com/user/repo.git\ngit push -u origin main\ngit pull origin main" }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Command Line Essentials",
-    "description": "Navigate filesystems, manage processes, and automate tasks from the terminal.",
-    "icon": "terminal",
-    "color": "#22c55e",
-    "topics": [
-      { "title": "Navigation", "content": "pwd prints the current directory. ls lists files, ls -la shows hidden files with details. cd changes directory — cd .. goes up, cd ~ goes home. Tab completion speeds up typing.", "command": "pwd\nls -la\ncd ~/projects" },
-      { "title": "File Operations", "content": "mkdir creates directories, touch creates empty files. cp copies, mv moves or renames. rm deletes files, rm -r deletes directories. Use rm carefully — there is no undo.", "command": "mkdir -p src/components\ntouch index.html\ncp config.json config.backup.json" },
-      { "title": "Searching & Filtering", "content": "grep searches file contents, find locates files by name. pipe (|) chains commands. head and tail show the beginning or end of files. wc counts lines, words, and characters.", "command": "grep -r \"TODO\" src/\nfind . -name \"*.js\" -type f\ncat log.txt | grep ERROR | wc -l" }
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Database Fundamentals",
-    "description": "Understand relational databases, SQL queries, and schema design patterns.",
-    "icon": "database",
-    "color": "#3b82f6",
-    "topics": [
-      { "title": "CRUD Operations", "content": "INSERT adds rows, SELECT reads, UPDATE modifies, DELETE removes. Always use WHERE clauses with UPDATE and DELETE to avoid affecting all rows. LIMIT constrains result count.", "command": "INSERT INTO users (name, email) VALUES ('Neo', 'neo@epsilon.dev');\nSELECT * FROM users WHERE active = true;\nUPDATE users SET role = 'admin' WHERE id = 1;\nDELETE FROM sessions WHERE expires_at < NOW();" },
-      { "title": "Joins & Relationships", "content": "INNER JOIN returns matching rows from both tables. LEFT JOIN returns all rows from the left table plus matches. Foreign keys enforce referential integrity. Junction tables handle many-to-many relationships.", "command": "SELECT u.name, o.total\nFROM users u\nINNER JOIN orders o ON u.id = o.user_id\nWHERE o.status = 'completed';" },
-      { "title": "Schema Design", "content": "Normalize to reduce redundancy: 1NF eliminates repeating groups, 2NF removes partial dependencies, 3NF eliminates transitive dependencies. Index columns used in WHERE and JOIN clauses. Add constraints like UNIQUE and NOT NULL to enforce data quality.", "command": "CREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  email VARCHAR(255) UNIQUE NOT NULL,\n  name VARCHAR(100) NOT NULL,\n  created_at TIMESTAMP DEFAULT NOW()\n);" }
-    ]
-  },
-  {
-    "id": 4,
-    "title": "API Design & REST",
-    "description": "Design clean RESTful APIs with proper HTTP methods, status codes, and resource naming.",
-    "icon": "plug",
-    "color": "#a855f7",
-    "topics": [
-      { "title": "REST Principles", "content": "REST APIs use HTTP methods on resource URLs. GET reads, POST creates, PUT replaces, PATCH partially updates, DELETE removes. Use plural nouns for collections: /users not /user. Nest for relationships: /users/1/posts.", "command": "GET    /api/users        # List users\nPOST   /api/users        # Create user\nGET    /api/users/1      # Get user 1\nPATCH  /api/users/1      # Update user 1\nDELETE /api/users/1      # Delete user 1" },
-      { "title": "Status Codes & Errors", "content": "200 OK for success, 201 Created for POST success, 204 No Content for DELETE success. 400 Bad Request for validation errors, 401 Unauthorized for missing auth, 403 Forbidden for insufficient permissions, 404 Not Found. 500 Internal Server Error for unexpected failures.", "command": "200 OK           — Success\n201 Created       — Resource created\n400 Bad Request   — Validation failed\n401 Unauthorized  — Not authenticated\n404 Not Found     — Resource missing\n429 Too Many Requests — Rate limited" }
-    ]
-  }
-]
+{
+  "courses": [
+    {
+      "id": "cc-git",
+      "title": "Git & GitHub Crash Course",
+      "icon": "git-branch",
+      "color": "#F05033",
+      "duration": "45 min",
+      "level": "Beginner",
+      "summary": "Version control is non-negotiable for modern developers. This crash course takes you from zero to confidently using Git on the command line and collaborating on GitHub.",
+      "sections": [
+        {
+          "heading": "Why Git?",
+          "body": "Git is a distributed version control system. It tracks every change to your code, lets you experiment in branches, and makes collaboration possible without overwriting each other's work. Every professional codebase uses it."
+        },
+        {
+          "heading": "The Core Commands",
+          "body": "git init creates a new repo. git clone copies a remote repo. git status shows what changed. git add stages changes. git commit saves a snapshot. git push uploads to the remote. git pull downloads and merges."
+        },
+        {
+          "heading": "Branching & Merging",
+          "body": "Branches let you work in isolation. git branch feature creates a branch; git checkout feature switches to it. Make commits, then git merge feature back into main. Pull requests on GitHub make this reviewable."
+        },
+        {
+          "heading": "Handling Conflicts",
+          "body": "Conflicts happen when two branches change the same lines. Git marks conflicts with <<<<<<<, =======, >>>>>>>. Open the file, pick the resolution, save, and commit. Stay calm — conflicts are normal."
+        }
+      ],
+      "code": "git init\ngit add .\ngit commit -m \"initial commit\"\ngit branch -M main\ngit remote add origin https://github.com/user/repo.git\ngit push -u origin main\n\n# feature branch flow\ngit checkout -b feature/login\ngit commit -am \"add login\"\ngit push origin feature/login\n# open PR on GitHub, then merge\ngit checkout main\ngit pull origin main"
+    },
+    {
+      "id": "cc-tailwind",
+      "title": "Tailwind CSS Crash Course",
+      "icon": "wind",
+      "color": "#06B6D4",
+      "duration": "40 min",
+      "level": "Intermediate",
+      "summary": "Utility-first CSS that lets you build modern UIs without writing CSS files. Learn the mental model, the most common utilities, and how to extract reusable components.",
+      "sections": [
+        {
+          "heading": "The Utility-First Mental Model",
+          "body": "Instead of naming classes like .card and writing CSS, you compose utilities directly in markup: class=\"bg-white rounded-xl p-4 shadow\". It feels verbose at first, but you never context-switch to a CSS file, and your styles are co-located with the markup they affect."
+        },
+        {
+          "heading": "Spacing, Color & Typography",
+          "body": "p-4 = padding 1rem. m-2 = margin 0.5rem. gap-4 = gap 1rem. Colors use scales: bg-purple-600, text-gray-300. Text sizes: text-sm, text-lg, text-2xl. Font weights: font-normal, font-bold."
+        },
+        {
+          "heading": "Responsive & State Variants",
+          "body": "Prefix utilities with breakpoints: md:flex-row applies flex-row at medium screens. State prefixes: hover:bg-purple-700, focus:ring-2, disabled:opacity-50. Dark mode: dark:bg-gray-900."
+        },
+        {
+          "heading": "Extracting Components",
+          "body": "When utilities repeat, extract them. In React/Vue, that's a component. In plain HTML, use @apply in your CSS to compose utilities into a named class. Don't extract too early — duplication is cheaper than the wrong abstraction."
+        }
+      ],
+      "code": "<!-- Card component -->\n<div class=\"bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition\">\n  <h3 class=\"text-xl font-bold text-gray-900\">Title</h3>\n  <p class=\"text-gray-600 mt-2\">Description text.</p>\n  <button class=\"mt-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition\">\n    Action\n  </button>\n</div>\n\n/* extract with @apply */\n.btn-primary {\n  @apply bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition;\n}"
+    },
+    {
+      "id": "cc-dsa",
+      "title": "Algorithms Crash Course",
+      "icon": "binary",
+      "color": "#10B981",
+      "duration": "1 hr",
+      "level": "Advanced",
+      "summary": "The algorithms that show up in every interview and in real-world code: sorting, searching, recursion, and dynamic programming. Visual, intuitive, no math degree required.",
+      "sections": [
+        {
+          "heading": "Big-O in One Minute",
+          "body": "Big-O describes how runtime grows with input. O(1) constant, O(log n) logarithmic (binary search), O(n) linear, O(n log n) sorting, O(n²) nested loops, O(2^n) naive recursion. Always ask: as n grows, what matters?"
+        },
+        {
+          "heading": "Binary Search",
+          "body": "On a sorted array, binary search halves the search space each step — O(log n). Most bugs come from off-by-one in the boundary. Use lo <= hi and mid = (lo + hi) >> 1."
+        },
+        {
+          "heading": "Recursion & Backtracking",
+          "body": "Recursion solves a problem by solving a smaller version of itself. Always define a base case. Backtracking explores all options and undels choices — classic for permutations, combinations, and puzzles like N-Queens."
+        },
+        {
+          "heading": "Dynamic Programming",
+          "body": "DP caches subproblem results to avoid recomputation. Two flavors: top-down with memoization, bottom-up with a table. Identify the state, the transition, and the base case. Practice on Fibonacci, knapsack, and longest common subsequence."
+        }
+      ],
+      "code": "// Binary search\ndef binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1\n\n# DP: Fibonacci with memoization\nfrom functools import lru_cache\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n < 2: return n\n    return fib(n-1) + fib(n-2)"
+    },
+    {
+      "id": "cc-sql",
+      "title": "SQL Crash Course",
+      "icon": "database",
+      "color": "#F59E0B",
+      "duration": "50 min",
+      "level": "Intermediate",
+      "summary": "Speak to databases. SELECT, JOIN, GROUP BY, subqueries, and window functions — everything you need to query real data and ship features that touch a database.",
+      "sections": [
+        {
+          "heading": "The SELECT Statement",
+          "body": "SELECT picks columns, FROM picks the table, WHERE filters rows, ORDER BY sorts, LIMIT caps the count. SELECT * is fine for exploration but always specify columns in production code."
+        },
+        {
+          "heading": "JOINs",
+          "body": "JOINs combine rows from two tables on a key. INNER JOIN keeps only matches. LEFT JOIN keeps all left rows. RIGHT and FULL JOINs exist but are less common. Always qualify columns when joining: users.name."
+        },
+        {
+          "heading": "Aggregation & GROUP BY",
+          "body": "Aggregate functions: COUNT, SUM, AVG, MIN, MAX. GROUP BY groups rows by a column before aggregating. HAVING filters groups (WHERE filters rows before grouping)."
+        },
+        {
+          "heading": "Window Functions",
+          "body": "Window functions compute across a set of rows related to the current row, without collapsing them. ROW_NUMBER, RANK, LAG, LEAD, and SUM() OVER() are the workhorses for analytics queries."
+        }
+      ],
+      "code": "-- basic select\nSELECT name, email, created_at\nFROM users\nWHERE active = true\nORDER BY created_at DESC\nLIMIT 20;\n\n-- join with aggregation\nSELECT u.name, COUNT(o.id) AS order_count, SUM(o.total) AS spent\nFROM users u\nLEFT JOIN orders o ON o.user_id = u.id\nWHERE u.country = 'KE'\nGROUP BY u.name\nHAVING SUM(o.total) > 1000\nORDER BY spent DESC;\n\n-- window function\nSELECT name, salary,\n  RANK() OVER (ORDER BY salary DESC) AS rank,\n  AVG(salary) OVER () AS team_avg\nFROM employees;"
+    },
+    {
+      "id": "cc-regex",
+      "title": "Regex Crash Course",
+      "icon": "search",
+      "color": "#EC4899",
+      "duration": "30 min",
+      "level": "Intermediate",
+      "summary": "Regular expressions are a mini-language for matching text. Learn the syntax, the metacharacters, and the common patterns every developer should recognize.",
+      "sections": [
+        {
+          "heading": "The Basics",
+          "body": "Letters and digits match themselves. . matches any char. * means zero or more, + means one or more, ? means optional. ^ anchors to start, $ anchors to end. Use \\d, \\w, \\s for digit, word char, whitespace."
+        },
+        {
+          "heading": "Character Classes & Groups",
+          "body": "[abc] matches a, b, or c. [^abc] matches anything except. (ab) groups; (?:ab) non-capturing. | means or: cat|dog matches either. Quantifiers: {3} exactly 3, {2,5} between 2 and 5."
+        },
+        {
+          "heading": "Common Patterns",
+          "body": "Email: ^[\\w.-]+@[\\w.-]+\\.\\w+$. Phone (KE): ^(\\+?254|0)\\d{9}$. URL, date, password strength — every developer should have these memorized or bookmarked."
+        },
+        {
+          "heading": "When NOT to Use Regex",
+          "body": "Don't parse HTML or XML with regex — use a parser. If your regex is longer than a tweet, it's probably wrong. Test with regex101.com and add tests for edge cases."
+        }
+      ],
+      "code": "// email\nconst emailRe = /^[\\w.-]+@[\\w.-]+\\.\\w+$/;\nemailRe.test('ada@example.com'); // true\n\n// Kenya phone\nconst phoneRe = /^(\\+?254|0)\\d{9}$/;\nphoneRe.test('+254712345678'); // true\nphoneRe.test('0712345678');    // true\n\n// extract all hashtags\nconst text = 'love #coding and #purple';\nconst tags = text.match(/#\\w+/g); // ['#coding', '#purple']\n\n// replace kebab-case with camelCase\n'foo-bar-baz'.replace(/-([a-z])/g, (_, c) => c.toUpperCase());"
+    }
+  ]
+}
