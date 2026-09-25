@@ -1,154 +1,142 @@
-{
-  "modules": [
-    {
-      "id": "m1",
-      "title": "Web Foundations",
-      "icon": "globe",
-      "color": "#8B5CF6",
-      "description": "The bedrock of every website: HTML structure, CSS presentation, and how browsers turn code into pixels. You will learn how the web works at a protocol level, how to author semantic documents, and how to style them with modern CSS including Flexbox and Grid.",
-      "level": "Beginner",
-      "duration": "3 weeks",
-      "lessons": 8,
-      "topics": [
-        "How the web really works (HTTP, DNS, browsers)",
-        "Semantic HTML & document structure",
-        "Forms, inputs & accessibility",
-        "CSS selectors, specificity & the cascade",
-        "The box model & positioning",
-        "Flexbox for 1D layouts",
-        "CSS Grid for 2D layouts",
-        "Responsive design & mobile-first thinking"
-      ],
-      "skills": ["HTML5", "CSS3", "Responsive Design", "Accessibility"]
-    },
-    {
-      "id": "m2",
-      "title": "JavaScript Essentials",
-      "icon": "code-2",
-      "color": "#A855F7",
-      "description": "JavaScript is the language of the web. This module takes you from variables to closures, the event loop, and async programming. By the end you can build interactive UIs, fetch data from APIs, and reason confidently about how JS executes.",
-      "level": "Beginner → Intermediate",
-      "duration": "4 weeks",
-      "lessons": 12,
-      "topics": [
-        "Values, types & operators",
-        "Variables, scope & hoisting",
-        "Functions, arrows & closures",
-        "Objects, arrays & destructuring",
-        "The DOM & events",
-        "Fetching data & promises",
-        "async / await",
-        "The event loop & concurrency",
-        "Error handling",
-        "Modules (ESM) & bundling",
-        "Storage: localStorage, IndexedDB",
-        "Debugging & DevTools"
-      ],
-      "skills": ["JavaScript", "DOM", "Async", "ES Modules"]
-    },
-    {
-      "id": "m3",
-      "title": "Modern React",
-      "icon": "atom",
-      "color": "#06B6D4",
-      "description": "React is the industry standard for building UIs. You will learn components, hooks, state, effects, context, and how to structure real applications. We also cover performance, suspense, and the latest React features.",
-      "level": "Intermediate",
-      "duration": "5 weeks",
-      "lessons": 14,
-      "topics": [
-        "JSX & components",
-        "Props & state",
-        "useState & useEffect",
-        "useRef, useMemo, useCallback",
-        "Context & useReducer",
-        "Custom hooks",
-        "Forms & controlled inputs",
-        "Routing with React Router",
-        "Data fetching patterns",
-        "Suspense & lazy loading",
-        "Performance & memoization",
-        "Testing with Vitest",
-        "Next.js & SSR basics",
-        "Deploying a React app"
-      ],
-      "skills": ["React", "Hooks", "Routing", "Next.js"]
-    },
-    {
-      "id": "m4",
-      "title": "Python & Scripting",
-      "icon": "terminal",
-      "color": "#10B981",
-      "description": "Python is the Swiss army knife of programming. This module covers syntax, data structures, OOP, file I/O, decorators, generators, and how to build real CLI tools and automation scripts that save you hours every week.",
-      "level": "Beginner → Intermediate",
-      "duration": "4 weeks",
-      "lessons": 10,
-      "topics": [
-        "Syntax, indentation & types",
-        "Lists, dicts, tuples, sets",
-        "Control flow & comprehensions",
-        "Functions & lambdas",
-        "Classes & OOP",
-        "Decorators & generators",
-        "File I/O & context managers",
-        "Virtualenvs & pip",
-        "Building a CLI with argparse",
-        "Automation scripts"
-      ],
-      "skills": ["Python", "OOP", "Automation", "CLI"]
-    },
-    {
-      "id": "m5",
-      "title": "Backend & APIs",
-      "icon": "server",
-      "color": "#F59E0B",
-      "description": "Build real backends. You will learn REST, databases, authentication, and how to deploy. We use Node.js, Express, and Supabase to ship a production-grade API with row-level security and realtime subscriptions.",
-      "level": "Intermediate → Advanced",
-      "duration": "5 weeks",
-      "lessons": 12,
-      "topics": [
-        "Client-server model",
-        "REST & HTTP methods",
-        "Express.js fundamentals",
-        "Middleware & routing",
-        "SQL & PostgreSQL",
-        "Supabase setup & RLS",
-        "Auth: JWT & sessions",
-        "File uploads & storage",
-        "Realtime subscriptions",
-        "Rate limiting & caching",
-        "Testing APIs",
-        "Deployment & CI/CD"
-      ],
-      "skills": ["Node.js", "Express", "PostgreSQL", "Supabase"]
-    },
-    {
-      "id": "m6",
-      "title": "Computer Science Core",
-      "icon": "cpu",
-      "color": "#EF4444",
-      "description": "The theory that makes you a real engineer: data structures, algorithms, complexity, and problem-solving patterns. Essential for interviews and for writing code that scales beyond a toy app.",
-      "level": "Advanced",
-      "duration": "6 weeks",
-      "lessons": 16,
-      "topics": [
-        "Big-O notation",
-        "Arrays & strings",
-        "Linked lists",
-        "Stacks & queues",
-        "Hash tables",
-        "Trees & BSTs",
-        "Heaps & priority queues",
-        "Graphs & traversal",
-        "Sorting algorithms",
-        "Binary search",
-        "Recursion & backtracking",
-        "Dynamic programming",
-        "Greedy algorithms",
-        "Bit manipulation",
-        "System design basics",
-        "Interview strategy"
-      ],
-      "skills": ["DSA", "Algorithms", "System Design", "Interview Prep"]
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "category": "html",
+    "title": "HTML Document Structure",
+    "description": "Every HTML page follows a specific structure that browsers rely on to render content correctly.",
+    "content": "An HTML document starts with the <!DOCTYPE html> declaration, which tells the browser this is an HTML5 document. The root <html> element contains two children: <head> for metadata and <body> for visible content. The <head> section includes the character encoding, viewport settings, and the page title. The <body> contains all the content users see — headings, paragraphs, images, links, and more. Understanding this structure is the foundation of all web development.",
+    "codeExample": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>My First Page</title>\n</head>\n<body>\n  <h1>Hello, World!</h1>\n  <p>This is my first web page.</p>\n</body>\n</html>",
+    "keyPoints": ["<!DOCTYPE html> declares HTML5", "<head> contains metadata, not visible content", "<body> contains all visible page content", "lang attribute helps screen readers and SEO"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 2,
+    "category": "html",
+    "title": "Semantic HTML Elements",
+    "description": "Semantic elements convey meaning about the type of content they contain, improving accessibility and SEO.",
+    "content": "Semantic HTML replaces generic <div> elements with meaningful tags like <header>, <nav>, <main>, <article>, <section>, <aside>, and <footer>. These elements communicate the structure of your page to browsers, screen readers, and search engines. A screen reader can jump directly to the <nav> element, and search engines understand that <article> contains self-contained content. Using semantic elements is not optional in professional development — it is a baseline requirement for accessibility compliance.",
+    "codeExample": "<header>\n  <nav aria-label=\"Main navigation\">\n    <a href=\"/\">Home</a>\n    <a href=\"/about\">About</a>\n    <a href=\"/contact\">Contact</a>\n  </nav>\n</header>\n\n<main>\n  <article>\n    <h2>Article Title</h2>\n    <p>Article content goes here...</p>\n  </article>\n  <aside>\n    <h3>Related Links</h3>\n  </aside>\n</main>\n\n<footer>\n  <p>&copy; 2024 Epsilon Neote</p>\n</footer>",
+    "keyPoints": ["<header> for introductory content or navigation", "<main> for the dominant page content (only one per page)", "<article> for self-contained content", "<section> for thematic grouping with a heading", "<aside> for tangentially related content", "<footer> for footer information"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 3,
+    "category": "html",
+    "title": "HTML Forms & Inputs",
+    "description": "Forms collect user input and are essential for search bars, login screens, registrations, and data entry.",
+    "content": "The <form> element wraps all input controls. Each input should have a associated <label> for accessibility — use the for attribute on the label matching the id on the input. HTML5 provides many input types: text, email, password, number, date, checkbox, radio, range, color, file, and more. The required attribute enables browser-native validation. The <select> element creates dropdowns, and <textarea> handles multi-line input. Always set name attributes on inputs — they identify the data when the form is submitted.",
+    "codeExample": "<form action=\"/submit\" method=\"POST\">\n  <label for=\"name\">Full Name</label>\n  <input type=\"text\" id=\"name\" name=\"name\" required>\n\n  <label for=\"email\">Email</label>\n  <input type=\"email\" id=\"email\" name=\"email\" required>\n\n  <label for=\"lang\">Language</label>\n  <select id=\"lang\" name=\"lang\">\n    <option value=\"js\">JavaScript</option>\n    <option value=\"py\">Python</option>\n    <option value=\"rb\">Ruby</option>\n  </select>\n\n  <button type=\"submit\">Submit</button>\n</form>",
+    "keyPoints": ["Always pair <label> with inputs via for/id", "HTML5 types like email and url provide free validation", "required attribute prevents empty submissions", "method attribute defines GET or POST", "name attribute identifies data on the server side"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 4,
+    "category": "css",
+    "title": "The CSS Box Model",
+    "description": "Every element on a page is a rectangular box governed by the box model — content, padding, border, margin.",
+    "content": "The box model defines how space is calculated for every element. Content is the innermost area holding text or children. Padding adds space between content and the border. Border wraps the padding. Margin creates space between this element and neighbors. By default, width and height set the content dimensions, meaning padding and border increase the total size. Using box-sizing: border-box changes this so width and height include padding and border — this is almost always what you want. Most resets apply border-box globally.",
+    "codeExample": "/* Reset to border-box universally */\n*, *::before, *::after {\n  box-sizing: border-box;\n}\n\n.card {\n  width: 300px;        /* Total width including padding & border */\n  padding: 20px;       /* 20px on all sides */\n  border: 2px solid #7c3aed;\n  margin: 16px auto;   /* Centered horizontally */\n}\n\n/* Content-box (default) — width is content only */\n.old-school {\n  box-sizing: content-box;\n  width: 300px;        /* Content is 300px, padding adds more */\n  padding: 20px;       /* Total width becomes 344px */\n}",
+    "keyPoints": ["box-sizing: border-box is the modern default", "margin collapses vertically between siblings", "padding does NOT collapse", "auto margins center block elements horizontally", "outline does not take up space (unlike border)"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 5,
+    "category": "css",
+    "title": "Flexbox Layout",
+    "description": "Flexbox is a one-dimensional layout system for arranging items in rows or columns with powerful alignment controls.",
+    "content": "Set display: flex on a container to activate flexbox. The main axis defaults to row (horizontal). Use justify-content to align items along the main axis and align-items for the cross axis. flex-direction: column flips the axes. The gap property adds space between flex children without margin hacks. Children can use flex: 1 to grow equally, or flex-grow, flex-shrink, and flex-basis for fine control. Flexbox handles vertical centering trivially — align-items: center on the container. It also reorders items visually with the order property without changing DOM structure.",
+    "codeExample": ".container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 16px;\n  flex-wrap: wrap;\n}\n\n.item {\n  flex: 1;           /* Grow equally */\n  min-width: 200px;  /* Don't shrink below this */\n}\n\n.sidebar {\n  flex: 0 0 250px;   /* Fixed 250px, don't grow or shrink */\n}\n\n.main {\n  flex: 1;           /* Take remaining space */\n}",
+    "keyPoints": ["display: flex activates flexbox on the container", "justify-content aligns on the main axis", "align-items aligns on the cross axis", "gap replaces margin-based spacing between items", "flex: 1 makes items grow equally to fill space", "flex-wrap: wrap allows items to flow to new lines"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 6,
+    "category": "css",
+    "title": "CSS Grid Layout",
+    "description": "Grid is a two-dimensional layout system for creating complex page layouts with rows and columns simultaneously.",
+    "content": "Set display: grid on a container. Define columns with grid-template-columns and rows with grid-template-rows. The fr unit distributes fractional space — 1fr 2fr gives one column a third of the space and another two-thirds. repeat(3, 1fr) creates three equal columns. Use grid-column and grid-row on children to span multiple cells. grid-area with grid-template-areas lets you name regions for intuitive layout definitions. Grid excels at page-level layouts while flexbox handles component-level alignment. They work perfectly together.",
+    "codeExample": ".page {\n  display: grid;\n  grid-template-areas:\n    'header header header'\n    'sidebar main   aside'\n    'footer footer footer';\n  grid-template-columns: 250px 1fr 200px;\n  grid-template-rows: auto 1fr auto;\n  min-height: 100vh;\n  gap: 16px;\n}\n\n.header  { grid-area: header; }\n.sidebar { grid-area: sidebar; }\n.main    { grid-area: main; }\n.aside   { grid-area: aside; }\n.footer  { grid-area: footer; }",
+    "keyPoints": ["grid-template-areas enables named layout regions", "fr unit distributes available space fractionally", "repeat() function avoids repetitive column/row definitions", "minmax() sets flexible size ranges for responsive grids", "gap applies to both rows and columns", "Grid and Flexbox complement each other — use both"],
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 7,
+    "category": "javascript",
+    "title": "Variables & Data Types",
+    "description": "JavaScript has three variable declarations and seven primitive types, plus objects and arrays.",
+    "content": "Use const by default, let when you need reassignment, and never use var. const prevents reassignment but does NOT make objects immutable — you can still modify properties. let is block-scoped, var is function-scoped (and hoisted), which causes bugs. Primitive types are string, number, bigint, boolean, undefined, null, and symbol. Objects and arrays are reference types — variables hold a reference to the data, not the data itself. This means two variables can point to the same object, and modifying one affects the other.",
+    "codeExample": "const name = 'Epsilon';       // String — use const by default\nlet score = 0;               // Number — let because it changes\nconst PI = 3.14159;          // Number\nconst isActive = true;       // Boolean\nconst data = null;           // Null (intentional absence)\nlet result;                  // Undefined (uninitialized)\n\nconst skills = ['HTML', 'CSS', 'JS'];  // Array (reference type)\nskills.push('React');                  // OK — modifying contents\n\nconst user = { name: 'Neo', level: 1 }; // Object\nuser.level = 2;                          // OK — modifying property\n// user = {};  // ERROR — can't reassign const",
+    "keyPoints": ["Use const by default, let only when reassignment is needed", "Avoid var — it is function-scoped and hoisted", "Primitives are copied by value, objects by reference", "typeof null returns 'object' — a historical bug", "Use typeof to check types at runtime"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 8,
+    "category": "javascript",
+    "title": "Functions & Closures",
+    "description": "Functions are first-class citizens in JS. Closures allow inner functions to access outer scope even after the outer function returns.",
+    "content": "JavaScript supports function declarations, function expressions, and arrow functions. Arrow functions do not have their own this binding — they inherit this from the enclosing scope. A closure is created when a function references variables from its outer lexical scope. Even after the outer function returns, the inner function retains access to those variables. Closures enable data privacy, factory functions, and the module pattern. They are also why callbacks in event handlers and setTimeout can access variables defined in their surrounding scope.",
+    "codeExample": "// Arrow function with implicit return\nconst double = n => n * 2;\n\n// Closure — counter encapsulates state\nfunction createCounter(initial = 0) {\n  let count = initial;  // Private variable\n  return {\n    increment: () => ++count,\n    decrement: () => --count,\n    getCount: () => count,\n  };\n}\n\nconst counter = createCounter(10);\nconsole.log(counter.getCount());   // 10\nconsole.log(counter.increment());  // 11\nconsole.log(counter.increment());  // 12\n// count is not directly accessible — data privacy",
+    "keyPoints": ["Arrow functions inherit this from the enclosing scope", "Closures retain access to outer scope after the outer function returns", "Closures enable private state and encapsulation", "Functions can be passed as arguments and returned from other functions", "IIFE (Immediately Invoked Function Expression) creates a private scope"],
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 9,
+    "category": "javascript",
+    "title": "Async JavaScript",
+    "description": "Handle asynchronous operations with Promises and async/await — network requests, timers, and file operations.",
+    "content": "JavaScript is single-threaded but non-blocking, thanks to the event loop. Promises represent a value that will be available in the future — either resolved (success) or rejected (error). The async keyword makes a function return a Promise, and await pauses execution until a Promise settles. Always wrap await in try/catch for error handling. Promise.all runs multiple promises in parallel and resolves when all succeed. Promise.allSettled resolves when all settle regardless of outcome. Promise.race resolves with the first promise to settle.",
+    "codeExample": "async function fetchUserData(userId) {\n  try {\n    const response = await fetch(`/api/users/${userId}`);\n    if (!response.ok) {\n      throw new Error(`HTTP ${response.status}`);\n    }\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error('Failed to fetch user:', error.message);\n    return null;\n  }\n}\n\n// Parallel requests with Promise.all\nasync function loadDashboard() {\n  const [user, posts, stats] = await Promise.all([\n    fetchUserData(1),\n    fetch('/api/posts').then(r => r.json()),\n    fetch('/api/stats').then(r => r.json()),\n  ]);\n}",
+    "keyPoints": ["async functions always return a Promise", "await can only be used inside async functions", "Always handle errors with try/catch around await", "Promise.all runs promises in parallel", "The event loop enables non-blocking I/O in a single thread"],
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 10,
+    "category": "python",
+    "title": "Python Basics & Syntax",
+    "description": "Python uses indentation for block structure, dynamic typing, and a clean readable syntax.",
+    "content": "Python uses indentation (4 spaces) instead of braces to define code blocks. Variables are dynamically typed — Python infers the type at runtime. Use snake_case for variables and functions, PascalCase for classes. Strings support f-strings for formatting: f'Hello {name}'. Lists are mutable sequences, tuples are immutable, dictionaries are key-value maps, and sets store unique elements. The range() function generates number sequences. Python's philosophy emphasizes readability — there should be one obvious way to do something.",
+    "codeExample": "# Variables — no type declaration needed\nname = \"Epsilon\"\nversion = 3.12\nis_active = True\n\n# F-strings for formatting\nmessage = f\"Welcome to {name} v{version}\"\n\n# List operations\nskills = [\"HTML\", \"CSS\", \"JS\"]\nskills.append(\"Python\")\nfirst = skills[0]    # \"HTML\"\nsliced = skills[1:]  # [\"CSS\", \"JS\", \"Python\"]\n\n# Dictionary\nconfig = {\n    \"theme\": \"dark\",\n    \"language\": \"en\",\n    \"debug\": False,\n}\n\n# Comprehensions\nupper_skills = [s.upper() for s in skills]\neven = [x for x in range(20) if x % 2 == 0]",
+    "keyPoints": ["Indentation defines code blocks — 4 spaces is standard", "Dynamic typing — no variable type declarations", "F-strings are the preferred string formatting method", "Lists are mutable, tuples are immutable", "List comprehensions replace many map/filter patterns"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 11,
+    "category": "python",
+    "title": "Functions & Decorators",
+    "description": "Python functions are first-class objects. Decorators modify function behavior without changing source code.",
+    "content": "Functions in Python are objects — they can be assigned to variables, passed as arguments, and returned from other functions. Default arguments are evaluated once at function definition, so mutable defaults like [] cause bugs — use None instead. *args collects positional arguments into a tuple, **kwargs collects keyword arguments into a dict. Decorators wrap a function to add behavior — logging, timing, access control, caching. The @syntax is syntactic sugar for applying the decorator. functools.wraps preserves the original function's metadata.",
+    "codeExample": "import functools\nimport time\n\n# Decorator that times function execution\ndef timer(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = func(*args, **kwargs)\n        elapsed = time.perf_counter() - start\n        print(f\"{func.__name__} took {elapsed:.4f}s\")\n        return result\n    return wrapper\n\n@timer\ndef process_data(items):\n    return [x ** 2 for x in items]\n\nresult = process_data(range(10000))\n# Output: process_data took 0.0012s\n\n# Mutable default argument pitfall\ndef add_item(item, items=None):  # NOT items=[]\n    if items is None:\n        items = []\n    items.append(item)\n    return items",
+    "keyPoints": ["Functions are first-class objects in Python", "Mutable default arguments are a common bug — use None", "*args and **kwargs handle variable arguments", "Decorators add behavior without modifying function source", "@functools.wraps preserves function metadata in decorators"],
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 12,
+    "category": "react",
+    "title": "Components & JSX",
+    "description": "React UIs are built from reusable components. JSX is a syntax extension that looks like HTML in JavaScript.",
+    "content": "React components are functions that return JSX — a syntax that resembles HTML but compiles to JavaScript. Component names must start with an uppercase letter. JSX uses className instead of class, htmlFor instead of for, and camelCase for event handlers like onClick. Expressions go inside curly braces: {variable}. Components accept props (inputs) and render output based on them. Props are read-only — a component should never modify its own props. Fragment (<></>) groups elements without adding DOM nodes.",
+    "codeExample": "function UserCard({ name, role, avatar, isOnline }) {\n  return (\n    <div className=\"user-card\">\n      <img src={avatar} alt={name} />\n      <div className=\"info\">\n        <h3>{name}</h3>\n        <p>{role}</p>\n        <span className={isOnline ? 'online' : 'offline'}>\n          {isOnline ? 'Online' : 'Offline'}\n        </span>\n      </div>\n    </div>\n  );\n}\n\n// Usage\n<UserCard\n  name=\"Neo\"\n  role=\"Developer\"\n  avatar=\"/avatars/neo.png\"\n  isOnline={true}\n/>",
+    "keyPoints": ["Component names must start with uppercase", "Use className instead of class in JSX", "Curly braces {} embed JavaScript expressions in JSX", "Props are read-only inputs to components", "Fragments (<></>) avoid unnecessary wrapper divs"],
+    "difficulty": "beginner"
+  },
+  {
+    "id": 13,
+    "category": "react",
+    "title": "Hooks: useState & useEffect",
+    "description": "Hooks let functional components manage state and side effects — the two core concerns of any interactive UI.",
+    "content": "useState returns a state variable and a setter function. The setter can accept a new value or an updater function that receives the previous state — always use the updater form when the new state depends on the old. useEffect runs side effects after render: data fetching, subscriptions, DOM manipulation. The dependency array controls when the effect re-runs — empty [] runs once on mount, [dep] runs when dep changes, and no array runs every render. Return a cleanup function from useEffect to tear down subscriptions and timers. Never call hooks conditionally — they must run in the same order every render.",
+    "codeExample": "import { useState, useEffect } from 'react';\n\nfunction UserProfile({ userId }) {\n  const [user, setUser] = useState(null);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    let cancelled = false;\n\n    async function loadUser() {\n      setLoading(true);\n      const res = await fetch(`/api/users/${userId}`);\n      const data = await res.json();\n      if (!cancelled) {\n        setUser(data);\n        setLoading(false);\n      }\n    }\n\n    loadUser();\n    return () => { cancelled = true; };\n  }, [userId]);\n\n  if (loading) return <p>Loading...</p>;\n  return <h2>{user.name}</h2>;\n}",
+    "keyPoints": ["useState returns [value, setter] — use updater form for derived state", "useEffect runs after render — dependency array controls re-runs", "Return cleanup function from useEffect for subscriptions/timers", "Never call hooks inside conditions or loops", "Use a cancelled flag to prevent state updates after unmount"],
+    "difficulty": "intermediate"
+  },
+  {
+    "id": 14,
+    "category": "react",
+    "title": "Context & Custom Hooks",
+    "description": "Context provides shared state across the component tree. Custom hooks extract reusable logic.",
+    "content": "React Context avoids prop drilling — passing props through many intermediate components. Create context with createContext(), provide it with <Context.Provider value={...}>, and consume it with useContext(). Context is best for theme, locale, auth, and other app-wide data. For complex state with many actions, useReducer centralizes state transitions. Custom hooks extract stateful logic into reusable functions — name them starting with use. A useLocalStorage hook that syncs state to localStorage, a useFetch hook that manages loading/error/data — these patterns dramatically reduce duplication.",
+    "codeExample": "import { createContext, useContext, useReducer } from 'react';\n\n// Context for theme\nconst ThemeContext = createContext('dark');\n\nfunction App() {\n  return (\n    <ThemeContext.Provider value=\"dark\">\n      <Layout />\n    </ThemeContext.Provider>\n  );\n}\n\nfunction Layout() {\n  const theme = useContext(ThemeContext); // No prop drilling\n  return <div className={theme}>Content</div>;\n}\n\n// Custom hook\nfunction useLocalStorage(key, initialValue) {\n  const [value, setValue] = useState(() => {\n    const saved = localStorage.getItem(key);\n    return saved ? JSON.parse(saved) : initialValue;\n  });\n\n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(value));\n  }, [key, value]);\n\n  return [value, setValue];\n}",
+    "keyPoints": ["Context avoids prop drilling for app-wide data", "Provider wraps the tree, useContext consumes it", "useReducer centralizes complex state transitions", "Custom hooks extract reusable stateful logic", "Custom hook names must start with 'use'"],
+    "difficulty": "intermediate"
+  }
+]
